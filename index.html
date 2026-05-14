@@ -5,20 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>KUIPER TECHNOLOGIES PTY LTD | Project Genesis</title>
     <style>
+        /* --- COLOR PALETTE (BRIGHTNESS MATCHED) --- */
         :root {
             --deep-navy: #050a14;
             --deep-wine: #58181f;
-            --gold-gum: #c5a059;
-            --gold-bright: #e3c48a;
+            /* Uniform Bright Gold for all text elements */
+            --gold-institutional: #e3c48a; 
             --glass: rgba(5, 10, 20, 0.94);
         }
 
+        /* --- GLOBAL RESET & SCALING --- */
         * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
 
         body { 
             background: black url('https://images-assets.nasa.gov/image/PIA23645/PIA23645~orig.jpg') no-repeat center center fixed; 
             background-size: cover;
-            color: var(--gold-gum); 
+            /* Primary body text now uses the bright gold */
+            color: var(--gold-institutional); 
             font-family: 'Courier New', Courier, monospace; 
             margin: 0; 
             padding: 0; 
@@ -30,19 +33,19 @@
             line-height: 1.6; 
         }
 
-        /* --- NAVIGATION --- */
+        /* --- NAVIGATION SYSTEM --- */
         .menu-btn {
             position: fixed;
             top: 20px;
             right: 20px;
             z-index: 1000;
             cursor: pointer;
-            background: rgba(88, 24, 31, 0.9);
+            background: rgba(88, 24, 31, 0.95);
             padding: 12px;
-            border: 1px solid var(--gold-gum);
+            border: 1px solid var(--gold-institutional);
             border-radius: 4px;
         }
-        .menu-btn div { width: 25px; height: 2px; background-color: var(--gold-bright); margin: 5px 0; }
+        .menu-btn div { width: 25px; height: 2px; background-color: var(--gold-institutional); margin: 5px 0; }
 
         .overlay {
             height: 100%; width: 0; position: fixed; z-index: 999; top: 0; left: 0;
@@ -50,10 +53,10 @@
             display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
         }
 
-        .overlay a, .overlay p { padding: 10px; text-decoration: none; font-size: 1.1rem; color: var(--gold-bright); display: block; }
+        .overlay a, .overlay p { padding: 10px; text-decoration: none; font-size: 1.1rem; color: var(--gold-institutional); display: block; }
         .overlay .closebtn { position: absolute; top: 20px; right: 30px; font-size: 45px; }
 
-        /* --- PITCH MODAL (SENSITIVE DATA SCRUBBED) --- */
+        /* --- PITCH MODAL (BRIGHTNESS MATCHED) --- */
         .modal {
             display: none;
             position: fixed;
@@ -71,14 +74,14 @@
             border: 1px solid var(--deep-wine);
             width: 100%;
             max-width: 700px;
-            color: var(--gold-gum);
+            color: var(--gold-institutional); /* Modal body text boosted */
             box-shadow: 0 0 60px rgba(88, 24, 31, 0.6);
         }
         .slide { border-bottom: 1px solid #1a1a1a; padding: 25px 0; }
-        .slide h3 { color: var(--gold-bright); text-transform: uppercase; letter-spacing: 2px; margin-top: 0; font-size: 1.1rem; }
-        .close-modal { color: var(--gold-bright); float: right; font-size: 40px; font-weight: bold; cursor: pointer; }
+        .slide h3 { color: var(--gold-institutional); text-transform: uppercase; letter-spacing: 2px; margin-top: 0; font-size: 1.1rem; }
+        .close-modal { color: var(--gold-institutional); float: right; font-size: 40px; font-weight: bold; cursor: pointer; }
 
-        /* --- THE VAULT --- */
+        /* --- THE VAULT (MAIN CONTAINER) --- */
         .vault { 
             width: 92%;
             max-width: 850px; 
@@ -91,13 +94,17 @@
             margin-bottom: 60px;
         }
 
-        h1 { color: var(--gold-bright); letter-spacing: 8px; margin-bottom: 40px; font-size: clamp(1.2rem, 4vw, 2.2rem); border-bottom: 2px solid var(--deep-wine); padding-bottom: 20px; text-align: center; text-transform: uppercase; }
-        h2 { color: var(--gold-bright); font-size: clamp(0.9rem, 3vw, 1.1rem); text-transform: uppercase; letter-spacing: 4px; margin-top: 45px; background: rgba(88, 24, 31, 0.4); padding: 8px 15px; border-left: 5px solid var(--deep-wine); }
-        p { font-size: clamp(0.85rem, 2.5vw, 1rem); margin-bottom: 25px; text-align: justify; }
+        h1 { color: var(--gold-institutional); letter-spacing: 8px; margin-bottom: 40px; font-size: clamp(1.2rem, 4vw, 2.2rem); border-bottom: 2px solid var(--deep-wine); padding-bottom: 20px; text-align: center; text-transform: uppercase; }
+        h2 { color: var(--gold-institutional); font-size: clamp(0.9rem, 3vw, 1.1rem); text-transform: uppercase; letter-spacing: 4px; margin-top: 45px; background: rgba(88, 24, 31, 0.4); padding: 8px 15px; border-left: 5px solid var(--deep-wine); }
+        p { font-size: clamp(0.85rem, 2.5vw, 1rem); margin-bottom: 25px; text-align: justify; color: var(--gold-institutional); }
 
-        .mission-statement { color: #eee; background: rgba(88, 24, 31, 0.15); padding: 30px; border-radius: 2px; font-style: italic; border: 1px solid var(--deep-wine); margin: 30px 0; }
-        .highlight { color: var(--gold-bright); font-weight: bold; }
+        .mission-statement { color: #fff; background: rgba(88, 24, 31, 0.15); padding: 30px; border-radius: 2px; font-style: italic; border: 1px solid var(--deep-wine); margin: 30px 0; }
+        .highlight { color: #fff; font-weight: bold; text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
 
+        /* High Luminance Border for Pipeline Alert */
+        .pipeline-alert { border: 1px dashed var(--gold-institutional); padding: 20px; background: rgba(5, 10, 20, 0.6); font-size: 0.9rem; margin-top: 30px; }
+        .pipeline-alert strong { color: #fff; }
+        
         .footer { margin-top: 50px; color: var(--deep-wine); font-size: 0.75rem; border-top: 1px solid rgba(197, 160, 89, 0.2); padding-top: 30px; text-align: center; font-weight: bold; }
         .footer a { color: var(--deep-wine); text-decoration: none; }
 
@@ -116,26 +123,28 @@
     <div id="myNav" class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="overlay-content">
-            <h2 style="background:none; border:none; color:var(--gold-bright);">COMMAND</h2>
+            <h2 style="background:none; border:none; color:var(--gold-institutional);">COMMAND</h2>
             <a href="#" onclick="closeNav()">Archive Home</a>
             
-            <h2 style="background:none; border:none; color:var(--gold-bright); margin-top:40px;">ASSETS</h2>
-            <a href="javascript:void(0)" onclick="openPitch()" style="border: 1px solid var(--gold-gum); padding: 12px; margin: 20px auto; max-width: 280px;">VIEW PROJECT GENESIS PITCH</a>
+            <h2 style="background:none; border:none; color:var(--gold-institutional); margin-top:40px;">ASSETS</h2>
+            <a href="javascript:void(0)" onclick="openPitch()" style="border: 1px solid var(--gold-institutional); padding: 12px; margin: 20px auto; max-width: 280px; font-weight: bold;">VIEW PROJECT GENESIS PITCH</a>
             <a href="mailto:bartm@kuipertechnologies.com?subject=Data%20Room%20Access%20Request">Request Data Room Access</a>
 
-            <h2 style="background:none; border:none; color:var(--gold-bright); margin-top:40px;">DOCUMENTATION</h2>
-            <p style="font-size: 0.8rem; color:var(--gold-gum); max-width: 250px; margin: 0 auto;">Technical White Papers are available to verified partners under NDA.</p>
-            <a href="mailto:bartm@kuipertechnologies.com?subject=White%20Paper%20Request" style="color:var(--gold-bright); text-decoration:underline;">Request Restricted Access</a>
+            <h2 style="background:none; border:none; color:var(--gold-institutional); margin-top:40px;">DOCUMENTATION</h2>
+            <p style="font-size: 0.8rem; max-width: 250px; margin: 0 auto;">Technical White Papers are available to verified partners under NDA.</p>
+            <a href="mailto:bartm@kuipertechnologies.com?subject=White%20Paper%20Request" style="text-decoration:underline;">Request Restricted Access</a>
 
-            <h2 style="background:none; border:none; color:var(--gold-bright); margin-top:40px;">LEGAL</h2>
-            <p style="font-size: 0.8rem;">ACN: 679 013 429</p>
+            <h2 style="background:none; border:none; color:var(--gold-institutional); margin-top:40px;">LEGAL</h2>
+            <p style="font-size: 0.8rem;">ACN: 69 54 733 24</
+                                                              
+                                                              p>
         </div>
     </div>
 
     <div id="pitchModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closePitch()">&times;</span>
-            <h1 style="font-size: 1.3rem; border:none; letter-spacing: 4px;">PROJECT GENESIS PITCH</h1>
+            <h1 style="font-size: 1.3rem; border:none; letter-spacing: 4px; color:var(--gold-institutional);">PROJECT GENESIS PITCH</h1>
             
             <div class="slide">
                 <h3>1. The Liability</h3>
@@ -144,7 +153,7 @@
 
             <div class="slide">
                 <h3>2. The Rig-OS Solution</h3>
-                <p>Kuiper Technologies repurposes offshore platforms into <strong>Asset Transformation Hubs</strong>. Hardware: Repurposed stable infrastructure. Software: <strong>Rig-OS</strong>, a proprietary API-driven platform for real-time extraction and logistics management.</p>
+                <p>Kuiper Technologies repurposes offshore platforms into <strong style="color:#fff;">Asset Transformation Hubs</strong>. Hardware: Repurposed stable infrastructure. Software: <strong style="color:#fff;">Rig-OS</strong>, a proprietary API-driven platform for real-time extraction and logistics management.</p>
             </div>
 
             <div class="slide">
@@ -154,12 +163,12 @@
 
             <div class="slide">
                 <h3>4. Revenue Model</h3>
-                <p>• <strong>Removal Credits (SaaS):</strong> Industrial offset certificates via API.<br>
-                   • <strong>Asset Repurposing:</strong> Revenue through the acquisition of offshore liabilities.<br>
-                   • <strong>Data Licensing:</strong> High-resolution global density intelligence.</p>
+                <p>• <strong style="color:#fff;">Removal Credits (SaaS):</strong> Industrial offset certificates via API.<br>
+                   • <strong style="color:#fff;">Asset Repurposing:</strong> Revenue through the acquisition of offshore liabilities.<br>
+                   • <strong style="color:#fff;">Intelligence:</strong> High-resolution global density intelligence.</p>
             </div>
             
-            <a href="mailto:bartm@kuipertechnologies.com?subject=Pitch%20Inquiry" style="display:block; text-align:center; margin-top:30px; color:var(--gold-bright); border:1px solid var(--gold-bright); padding:15px; text-decoration:none; font-weight:bold;">CONTACT DIRECTOR FOR DATA ROOM</a>
+            <a href="mailto:bartm@kuipertechnologies.com?subject=Pitch%20Inquiry" style="display:block; text-align:center; margin-top:30px; color:var(--gold-institutional); border:2px solid var(--gold-institutional); padding:15px; text-decoration:none; font-weight:bold; letter-spacing: 1px; background:rgba(227, 196, 138, 0.1);">CONTACT DIRECTOR FOR DATA ROOM</a>
         </div>
     </div>
 
@@ -185,8 +194,12 @@
             Our core architecture is the <span class="highlight">UNCLONED</span> protocol—a hardware-bonded security layer designed to solder software identity to physical silicon. Our <strong>already-written core codebase</strong> ensures absolute integrity across the Rig-OS platform.
         </p>
         
+        <div class="pipeline-alert">
+            <strong style="color:#fff;">DEVELOPMENT PIPELINE:</strong> Featuring our specialized ADHD Mathematics Engine (Exam-Legal) and 5 other proprietary applications built on our existing identity-verification codebase.
+        </div>
+
         <div class="footer">
-            © 2026 KUIPER TECHNOLOGIES PTY LTD | ACN: 69 54 733 24<br>
+            © 2026 KUIPER TECHNOLOGIES PTY LTD | ACN: 69 54 733 24</br>
             <a href="mailto:bartm@kuipertechnologies.com">bartm@kuipertechnologies.com</a>
         </div>
     </div>
@@ -211,3 +224,4 @@
 
 </body>
 </html>
+
