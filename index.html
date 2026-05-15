@@ -257,6 +257,55 @@
     </div>
 </section>
 
+ <section id="vault" style="padding: 60px 20px; background: #000; border-top: 2px solid #d4af37; font-family: 'Courier New', Courier, monospace;">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <h2 style="color: #d4af37; letter-spacing: 2px; text-transform: uppercase;">Proprietary IP Vault</h2>
+        
+        <div id="stage-1">
+            <p style="color: #b0b0b0; margin-bottom: 30px; line-height: 1.6;">
+                Access to Kuiper Technologies White Papers requires professional verification via LinkedIn. 
+                Credentials will be vetted by the Director personally via the Command Console.
+            </p>
+            <button onclick="startLinkedInHandshake()" style="background: #0077b5; border: none; color: white; padding: 15px 30px; cursor: pointer; font-weight: bold; border-radius: 4px;">
+                Sign In with LinkedIn to Request Access
+            </button>
+        </div>
+
+        <div id="stage-2" style="display: none; border: 1px dashed #330000; padding: 40px;">
+            <p style="color: #d4af37;">[ IDENTITY HANDSHAKE COMPLETE ]</p>
+            <p style="color: #fff;">The Director has been notified. Verification in progress.</p>
+            <p style="color: #666; font-size: 0.9em;">A secure NDA link will be sent to your verified professional email upon approval.</p>
+        </div>
+    </div>
+</section>
+
+<section id="nda-vault" style="display: none; padding: 60px 20px; background: #0a0a0a; border-top: 1px solid #333;">
+    <div style="max-width: 600px; margin: 0 auto; background: #111; padding: 30px; border: 1px solid #d4af37;">
+        <h3 style="color: #fff; text-align: center;">CONFIDENTIALITY AGREEMENT</h3>
+        <div style="height: 150px; overflow-y: scroll; background: #000; color: #666; padding: 15px; font-size: 0.7em; margin-bottom: 20px; border: 1px solid #222;">
+            Recipient acknowledges that all information regarding "Project Genesis" and "Uncloned" is the sole property of Kuiper Technologies Pty Ltd...
+        </div>
+        <canvas id="sig-canvas" style="width: 100%; height: 150px; background: #fff; border: 1px solid #d4af37;"></canvas>
+        <button onclick="submitNDA()" style="width: 100%; margin-top: 20px; background: #d4af37; color: #000; border: none; padding: 15px; font-weight: bold; cursor: pointer;">SIGN & UNLOCK IP</button>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+<script>
+    function startLinkedInHandshake() {
+        // This alerts you and shows the "Pending" state for the demo
+        document.getElementById('stage-1').style.display = 'none';
+        document.getElementById('stage-2').style.display = 'block';
+        
+        // FUTURE: Link this to your Singapore backend for actual OAuth
+        alert("REDIRECTING TO LINKEDIN AUTHENTICATION...");
+    }
+
+    function submitNDA() {
+        alert("NDA SIGNED. ACCESSING SINGAPORE BACKEND... FILE DOWNLOAD STARTING.");
+    }
+</script>
+   
 </body>
 </html>
 
