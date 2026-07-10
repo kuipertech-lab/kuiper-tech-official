@@ -7,12 +7,14 @@
     <meta name="description" content="Privacy policy for coNNect by Kuiper Technologies Pty Ltd.">
     <style>
         :root {
-            --background: #050a14;
-            --panel: rgba(5, 10, 20, 0.96);
-            --wine: #58181f;
-            --gold: #e3c48a;
-            --text: #f5ead4;
-            --muted: #c7b58f;
+            --cream: #f4efe4;
+            --paper: #fffaf0;
+            --navy: #10243f;
+            --blue: #1d3d63;
+            --tan: #b68a55;
+            --brown: #7d5231;
+            --line: #dbc8ad;
+            --muted: #5f6b78;
         }
 
         * {
@@ -21,45 +23,85 @@
 
         body {
             margin: 0;
-            background: var(--background);
-            color: var(--text);
-            font-family: "Courier New", Courier, monospace;
+            background: var(--cream);
+            color: var(--navy);
+            font-family: Georgia, "Times New Roman", serif;
             line-height: 1.65;
+        }
+
+        .topbar {
+            background: rgba(255, 250, 240, 0.96);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .nav {
+            width: min(920px, calc(100% - 32px));
+            min-height: 72px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand,
+        .nav a {
+            color: var(--navy);
+            text-decoration: none;
+        }
+
+        .brand {
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .nav-links a {
+            font-family: Arial, sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
         main {
             width: min(920px, calc(100% - 32px));
             margin: 40px auto;
             padding: 36px;
-            background: var(--panel);
-            border: 1px solid var(--wine);
-            box-shadow: 0 0 48px rgba(88, 24, 31, 0.35);
+            background: var(--paper);
+            border: 1px solid var(--line);
         }
 
         h1,
         h2 {
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            color: var(--navy);
+            letter-spacing: 0;
         }
 
         h1 {
             margin: 0 0 12px;
             padding-bottom: 18px;
-            border-bottom: 2px solid var(--wine);
+            border-bottom: 2px solid var(--line);
             font-size: clamp(1.5rem, 5vw, 2.2rem);
         }
 
         h2 {
             margin-top: 34px;
-            font-size: 1rem;
-            border-left: 4px solid var(--wine);
+            color: var(--blue);
+            font-size: 1.1rem;
+            border-left: 4px solid var(--tan);
             padding-left: 12px;
         }
 
         p,
         li {
-            color: var(--text);
+            color: var(--muted);
             font-size: 0.98rem;
         }
 
@@ -68,7 +110,7 @@
         }
 
         a {
-            color: var(--gold);
+            color: var(--brown);
         }
 
         .meta {
@@ -77,8 +119,8 @@
         }
 
         .notice {
-            border: 1px solid var(--wine);
-            background: rgba(88, 24, 31, 0.18);
+            border: 1px solid var(--line);
+            background: rgba(182, 138, 85, 0.12);
             padding: 18px;
             margin: 24px 0;
         }
@@ -86,12 +128,18 @@
         .footer {
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 1px solid rgba(227, 196, 138, 0.25);
+            border-top: 1px solid var(--line);
             color: var(--muted);
             font-size: 0.9rem;
         }
 
         @media (max-width: 640px) {
+            .nav {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 18px 0;
+            }
+
             main {
                 margin: 20px auto;
                 padding: 24px;
@@ -100,6 +148,17 @@
     </style>
 </head>
 <body>
+    <header class="topbar">
+        <nav class="nav" aria-label="Main navigation">
+            <a class="brand" href="/">Kuiper Technologies</a>
+            <div class="nav-links">
+                <a href="/#apps-created">Apps Created</a>
+                <a href="/apps/connect/">coNNect</a>
+                <a href="mailto:bartm@kuipertechnologies.com">Contact</a>
+            </div>
+        </nav>
+    </header>
+
     <main>
         <h1>coNNect Privacy Policy</h1>
         <p class="meta">Owner: Kuiper Technologies Pty Ltd. Last updated: 10 July 2026.</p>

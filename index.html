@@ -2,331 +2,353 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>KUIPER TECHNOLOGIES PTY LTD | Project Genesis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuiper Technologies Pty Ltd</title>
+    <meta name="description" content="Kuiper Technologies Pty Ltd builds secure software systems and applied technology ventures.">
     <style>
-        /* --- COLOR PALETTE (BRIGHTNESS MATCHED) --- */
         :root {
-            --deep-navy: #050a14;
-            --deep-wine: #58181f;
-            /* Uniform Bright Gold for all text elements */
-            --gold-institutional: #e3c48a; 
-            --glass: rgba(5, 10, 20, 0.94);
+            --cream: #f4efe4;
+            --paper: #fffaf0;
+            --navy: #10243f;
+            --blue: #1d3d63;
+            --tan: #b68a55;
+            --brown: #7d5231;
+            --line: #dbc8ad;
+            --muted: #5f6b78;
         }
 
-        /* --- GLOBAL RESET & SCALING --- */
-        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-
-        body { 
-            background: black url('https://images-assets.nasa.gov/image/PIA23645/PIA23645~orig.jpg') no-repeat center center fixed; 
-            background-size: cover;
-            /* Primary body text now uses the bright gold */
-            color: var(--gold-institutional); 
-            font-family: 'Courier New', Courier, monospace; 
-            margin: 0; 
-            padding: 0; 
-            display: flex; 
-            flex-direction: column;
-            align-items: center; 
-            justify-content: flex-start; 
-            min-height: 100vh; 
-            line-height: 1.6; 
+        * {
+            box-sizing: border-box;
         }
 
-        /* --- NAVIGATION SYSTEM --- */
-        .menu-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            cursor: pointer;
-            background: rgba(88, 24, 31, 0.95);
-            padding: 12px;
-            border: 1px solid var(--gold-institutional);
-            border-radius: 4px;
-        }
-        .menu-btn div { width: 25px; height: 2px; background-color: var(--gold-institutional); margin: 5px 0; }
-
-        .overlay {
-            height: 100%; width: 0; position: fixed; z-index: 999; top: 0; left: 0;
-            background-color: rgba(5, 10, 20, 0.98); overflow-x: hidden; transition: 0.5s;
-            display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+        body {
+            margin: 0;
+            background: var(--cream);
+            color: var(--navy);
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.65;
         }
 
-        .overlay a, .overlay p { padding: 10px; text-decoration: none; font-size: 1.1rem; color: var(--gold-institutional); display: block; }
-        .overlay .closebtn { position: absolute; top: 20px; right: 30px; font-size: 45px; }
-
-        /* --- PITCH MODAL (BRIGHTNESS MATCHED) --- */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0; top: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.96);
-            overflow-y: auto;
-            padding: 20px;
-        }
-        .modal-content {
-            background-color: var(--deep-navy);
-            margin: 20px auto;
-            padding: 30px;
-            border: 1px solid var(--deep-wine);
-            width: 100%;
-            max-width: 700px;
-            color: var(--gold-institutional); /* Modal body text boosted */
-            box-shadow: 0 0 60px rgba(88, 24, 31, 0.6);
-        }
-        .slide { border-bottom: 1px solid #1a1a1a; padding: 25px 0; }
-        .slide h3 { color: var(--gold-institutional); text-transform: uppercase; letter-spacing: 2px; margin-top: 0; font-size: 1.1rem; }
-        .close-modal { color: var(--gold-institutional); float: right; font-size: 40px; font-weight: bold; cursor: pointer; }
-
-        /* --- THE VAULT (MAIN CONTAINER) --- */
-        .vault { 
-            width: 92%;
-            max-width: 850px; 
-            background: var(--glass); 
-            border: 2px solid var(--deep-wine); 
-            padding: 5% 8%; 
-            box-shadow: 0 0 50px rgba(88, 24, 31, 0.4); 
-            backdrop-filter: blur(12px);
-            margin-top: 100px;
-            margin-bottom: 60px;
+        a {
+            color: var(--blue);
         }
 
-        h1 { color: var(--gold-institutional); letter-spacing: 8px; margin-bottom: 40px; font-size: clamp(1.2rem, 4vw, 2.2rem); border-bottom: 2px solid var(--deep-wine); padding-bottom: 20px; text-align: center; text-transform: uppercase; }
-        h2 { color: var(--gold-institutional); font-size: clamp(0.9rem, 3vw, 1.1rem); text-transform: uppercase; letter-spacing: 4px; margin-top: 45px; background: rgba(88, 24, 31, 0.4); padding: 8px 15px; border-left: 5px solid var(--deep-wine); }
-        p { font-size: clamp(0.85rem, 2.5vw, 1rem); margin-bottom: 25px; text-align: justify; color: var(--gold-institutional); }
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: rgba(255, 250, 240, 0.96);
+            border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(10px);
+        }
 
-        .mission-statement { color: #fff; background: rgba(88, 24, 31, 0.15); padding: 30px; border-radius: 2px; font-style: italic; border: 1px solid var(--deep-wine); margin: 30px 0; }
-        .highlight { color: #fff; font-weight: bold; text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+        .nav {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
 
-        /* High Luminance Border for Pipeline Alert */
-        .pipeline-alert { border: 1px dashed var(--gold-institutional); padding: 20px; background: rgba(5, 10, 20, 0.6); font-size: 0.9rem; margin-top: 30px; }
-        .pipeline-alert strong { color: #fff; }
-        
-        .footer { margin-top: 50px; color: var(--deep-wine); font-size: 0.75rem; border-top: 1px solid rgba(197, 160, 89, 0.2); padding-top: 30px; text-align: center; font-weight: bold; }
-        .footer a { color: var(--deep-wine); text-decoration: none; }
+        .brand {
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+        }
 
-        @media (max-width: 600px) {
-            .vault { padding: 30px 20px; width: 95%; margin-top: 80px; }
-            h1 { letter-spacing: 4px; }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 0.92rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover {
+            color: var(--brown);
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0 18px;
+            background: var(--tan);
+            color: #fffaf0;
+            border: 1px solid var(--brown);
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .button.secondary {
+            background: transparent;
+            color: var(--navy);
+        }
+
+        main {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .hero {
+            min-height: 72vh;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 56px;
+            align-items: center;
+            padding: 76px 0 48px;
+        }
+
+        .eyebrow {
+            margin: 0 0 14px;
+            color: var(--brown);
+            font-family: Arial, sans-serif;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0;
+            color: var(--navy);
+            font-size: clamp(2.5rem, 7vw, 5.2rem);
+            line-height: 0.98;
+            letter-spacing: 0;
+        }
+
+        .lead {
+            max-width: 680px;
+            margin: 28px 0 0;
+            color: #263f5f;
+            font-size: clamp(1.08rem, 2vw, 1.35rem);
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 34px;
+        }
+
+        .hero-panel {
+            border-left: 4px solid var(--tan);
+            padding-left: 26px;
+        }
+
+        .hero-panel p {
+            margin: 0 0 18px;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        section {
+            padding: 58px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        h2 {
+            margin: 0 0 18px;
+            color: var(--navy);
+            font-size: clamp(1.65rem, 4vw, 2.55rem);
+            line-height: 1.1;
+            letter-spacing: 0;
+        }
+
+        h3 {
+            margin: 0 0 10px;
+            color: var(--blue);
+            font-size: 1.1rem;
+            letter-spacing: 0;
+        }
+
+        .section-intro {
+            max-width: 760px;
+            margin: 0 0 34px;
+            color: var(--muted);
+            font-size: 1.06rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .item {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            padding: 24px;
+        }
+
+        .item p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .app-feature {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 28px;
+            align-items: center;
+            background: var(--paper);
+            border: 1px solid var(--line);
+            padding: 28px;
+        }
+
+        .app-feature img {
+            width: 132px;
+            height: 132px;
+            border-radius: 28px;
+            box-shadow: 0 18px 42px rgba(16, 36, 63, 0.18);
+        }
+
+        .app-feature p {
+            margin: 0 0 18px;
+            color: var(--muted);
+        }
+
+        footer {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 34px 0 48px;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: var(--brown);
+        }
+
+        @media (max-width: 820px) {
+            .nav {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 18px 0;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                padding-top: 52px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .app-feature {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-
-    <div class="menu-btn" onclick="openNav()">
-        <div></div><div></div><div></div>
-    </div>
-
-    <div id="myNav" class="overlay">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div class="overlay-content">
-            <h2 style="background:none; border:none; color:var(--gold-institutional);">COMMAND</h2>
-            <a href="#" onclick="closeNav()">Archive Home</a>
-            
-            <h2 style="background:none; border:none; color:var(--gold-institutional); margin-top:40px;">ASSETS</h2>
-            <a href="javascript:void(0)" onclick="openPitch()" style="border: 1px solid var(--gold-institutional); padding: 12px; margin: 20px auto; max-width: 280px; font-weight: bold;">VIEW PROJECT GENESIS PITCH</a>
-            <a href="mailto:bartm@kuipertechnologies.com?subject=Data%20Room%20Access%20Request">Request Data Room Access</a>
-
-            <h2 style="background:none; border:none; color:var(--gold-institutional); margin-top:40px;">DOCUMENTATION</h2>
-            <p style="font-size: 0.8rem; max-width: 250px; margin: 0 auto;">Technical White Papers are available to verified partners under NDA.</p>
-            <a href="mailto:bartm@kuipertechnologies.com?subject=White%20Paper%20Request" style="text-decoration:underline;">Request Restricted Access</a>
-
-            <h2 style="background:none; border:none; color:var(--gold-institutional); margin-top:40px;">LEGAL</h2>
-            <a href="/connect/privacy/">coNNect Privacy Policy</a>
-            <p style="font-size: 0.8rem;">ACN: 69 54 733 24</p>
-        </div>
-    </div>
-
-    <div id="pitchModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closePitch()">&times;</span>
-            <h1 style="font-size: 1.3rem; border:none; letter-spacing: 4px; color:var(--gold-institutional);">PROJECT GENESIS PITCH</h1>
-            
-            <div class="slide">
-                <h3>1. The Liability</h3>
-                <p>Energy companies manage multi-billion dollar decommissioning liabilities for offshore assets. Simultaneously, global plastic inflow requires industrial-scale solutions. There is currently no integrated infrastructure to bridge these two global crises.</p>
+    <header class="topbar">
+        <nav class="nav" aria-label="Main navigation">
+            <a class="brand" href="/">Kuiper Technologies</a>
+            <div class="nav-links">
+                <a href="#work">Work</a>
+                <a href="#apps-created">Apps Created</a>
+                <a href="/apps/connect/">coNNect</a>
+                <a href="/connect/privacy/">Privacy</a>
+                <a href="mailto:bartm@kuipertechnologies.com">Contact</a>
             </div>
+        </nav>
+    </header>
 
-            <div class="slide">
-                <h3>2. The Rig-OS Solution</h3>
-                <p>Kuiper Technologies repurposes offshore platforms into <strong style="color:#fff;">Asset Transformation Hubs</strong>. Hardware: Repurposed stable infrastructure. Software: <strong style="color:#fff;">Rig-OS</strong>, a proprietary API-driven platform for real-time extraction and logistics management.</p>
+    <main>
+        <section class="hero">
+            <div>
+                <p class="eyebrow">Secure Software and Applied Technology</p>
+                <h1>Kuiper Technologies Pty Ltd</h1>
+                <p class="lead">We design and build high-integrity software systems, mobile applications, secure APIs, and applied technology ventures for commercial, industrial, and consumer markets.</p>
+                <div class="hero-actions">
+                    <a class="button" href="/apps/connect/">View Apps Created</a>
+                    <a class="button secondary" href="mailto:bartm@kuipertechnologies.com?subject=Project%20Inquiry">Contact Director</a>
+                </div>
             </div>
+            <aside class="hero-panel">
+                <p>Our commercial work combines product design, backend architecture, security controls, and operational documentation for review-ready deployments.</p>
+                <p>Current development includes coNNect, proprietary secure identity concepts, and Project Genesis environmental infrastructure research.</p>
+            </aside>
+        </section>
 
-            <div class="slide">
-                <h3>3. Proprietary Methodology</h3>
-                <p>We utilize an exclusive, non-invasive technology to convert polymer waste into high-value stable compounds. Our process targets high-density landfill and ocean plastics, yielding mineralized soil enhancers and carbon-neutral raw materials.</p>
+        <section id="work">
+            <p class="eyebrow">What We Build</p>
+            <h2>Commercial systems with security and compliance built into the foundation.</h2>
+            <p class="section-intro">Kuiper Technologies creates custom applications, secure service layers, and privacy-conscious product frameworks for organizations that need practical engineering and defensible documentation.</p>
+            <div class="grid">
+                <article class="item">
+                    <h3>Mobile Applications</h3>
+                    <p>Consumer and business apps with account flows, privacy controls, messaging, safety features, and app-store readiness.</p>
+                </article>
+                <article class="item">
+                    <h3>Secure APIs</h3>
+                    <p>Backend services, integration layers, audit logging, data retention controls, and security-first operational design.</p>
+                </article>
+                <article class="item">
+                    <h3>Product Documentation</h3>
+                    <p>Privacy, data handling, threat model, moderation, incident response, and assessment evidence for review cycles.</p>
+                </article>
             </div>
+        </section>
 
-            <div class="slide">
-                <h3>4. Revenue Model</h3>
-                <p>• <strong style="color:#fff;">Removal Credits (SaaS):</strong> Industrial offset certificates via API.<br>
-                   • <strong style="color:#fff;">Asset Repurposing:</strong> Revenue through the acquisition of offshore liabilities.<br>
-                   • <strong style="color:#fff;">Intelligence:</strong> High-resolution global density intelligence.</p>
+        <section id="apps-created">
+            <p class="eyebrow">Apps Created</p>
+            <h2>coNNect</h2>
+            <article class="app-feature">
+                <img src="/assets/connect-logo.png" alt="coNNect app logo">
+                <div>
+                    <p>coNNect is a privacy-conscious social discovery and messaging app built around user controls, secure local storage, moderation workflows, account deletion support, and location safety settings.</p>
+                    <p>It demonstrates Kuiper Technologies' ability to take an app from concept into a review-ready source package with mobile UI, secure service boundaries, policy evidence, and commercial deployment preparation.</p>
+                    <a class="button" href="/apps/connect/">View coNNect App Page</a>
+                </div>
+            </article>
+        </section>
+
+        <section>
+            <p class="eyebrow">Project Genesis</p>
+            <h2>Applied infrastructure research for long-term environmental transformation.</h2>
+            <p class="section-intro">Alongside commercial software, Kuiper Technologies is developing Project Genesis: a long-horizon research and infrastructure concept focused on transforming distressed environmental liabilities into engineered future assets.</p>
+            <div class="grid">
+                <article class="item">
+                    <h3>Methodology</h3>
+                    <p>Repurposing infrastructure and software-led logistics to support large-scale environmental transformation pathways.</p>
+                </article>
+                <article class="item">
+                    <h3>Commercial Engine</h3>
+                    <p>Custom software and secure application development provide near-term commercial sustainability while funding long-term research.</p>
+                </article>
+                <article class="item">
+                    <h3>Partner Access</h3>
+                    <p>Technical details and restricted materials are available to verified partners under appropriate access controls.</p>
+                </article>
             </div>
-            
-            <a href="mailto:bartm@kuipertechnologies.com?subject=Pitch%20Inquiry" style="display:block; text-align:center; margin-top:30px; color:var(--gold-institutional); border:2px solid var(--gold-institutional); padding:15px; text-decoration:none; font-weight:bold; letter-spacing: 1px; background:rgba(227, 196, 138, 0.1);">CONTACT DIRECTOR FOR DATA ROOM</a>
-        </div>
-    </div>
+        </section>
+    </main>
 
-    <div class="vault">
-        <h1>KUIPER TECHNOLOGIES</h1>
-        
-        <h2>Our Methodology</h2>
-        <p style="color:#fff; font-weight:bold;">
-            At Kuiper Technologies Pty Ltd, we live outside the box. If global challenges are going to be solved, our thought patterns must evolve. We do not iterate; we architect.
-        </p>
-
-        <div class="mission-statement">
-            <strong>PROJECT GENESIS:</strong> We are transitioning from high-invasive chemical treatments to a proprietary methodology designed to transform polymer waste. By repurposing decommissioned offshore assets, we extract and convert ocean-borne nano-plastic liabilities into carbon-neutral, mineralized assets.
-        </div>
-
-        <h2>Commercial Infrastructure</h2>
-        <p>
-            To fund RIG-GENESIS, <span class="highlight">Kuiper Technologies PTY LTD</span> leverages a foundation of proprietary source code. Our commercial environment includes custom APIs and high-integrity software solutions designed for industrial and educational deployments.
-        </p>
-
-        <h2>Security & Integrity</h2>
-        <p>
-            Our core architecture is the <span class="highlight">UNCLONED</span> protocol—a hardware-bonded security layer designed to solder software identity to physical silicon. Our <strong>already-written core codebase</strong> ensures absolute integrity across the Rig-OS platform.
-        </p>
-        
-        <div class="pipeline-alert">
-            <strong style="color:#fff;">DEVELOPMENT PIPELINE:</strong> Featuring our specialized High-Divergence Mathematical Processing Engine and 5 other proprietary applications built on our existing identity-verification codebase.
-        </div>
-
-        <h2>Current Revenue Engine</h2>
-        <p>
-            To capitalize the multi-phase deployment of Project Genesis, <span class="highlight">Kuiper Technologies PTY LTD</span> actively commercializes its underlying engineering frameworks. We design, develop, and deploy high-integrity custom applications and secure enterprise APIs for industrial, corporate, and educational environments.
-        </p>
-        <p>
-            By leveraging our proprietary identity-verification and data-processing architectures for active client deployments, we maintain immediate operational self-sustainability while aggressively funding our long-term environmental R&D pipelines.
-        </p>
-
-        <div class="footer">
-            © 2026 KUIPER TECHNOLOGIES PTY LTD | ACN: 69 54 733 24<br>
-            <a href="mailto:bartm@kuipertechnologies.com">bartm@kuipertechnologies.com</a>
-        </div>
-    </div>
-
-    <script>
-        function openNav() { document.getElementById("myNav").style.width = "100%"; }
-        function closeNav() { document.getElementById("myNav").style.width = "0%"; }
-        function openPitch() { 
-            document.getElementById("pitchModal").style.display = "block"; 
-            document.body.style.overflow = "hidden";
-            closeNav(); 
-        }
-        function closePitch() { 
-            document.getElementById("pitchModal").style.display = "none"; 
-            document.body.style.overflow = "auto";
-        }
-        window.onclick = function(event) {
-            let modal = document.getElementById("pitchModal");
-            if (event.target == modal) { closePitch(); }
-        }
-    </script>
-
-<section id="reclamation" style="padding: 60px 20px; background: #0a0a0a; border-top: 2px solid #330000; font-family: 'Courier New', Courier, monospace;">
-    <div style="max-width: 800px; margin: 0 auto;">
-        <h2 style="color: #d4af37; letter-spacing: 3px; text-transform: uppercase; font-size: 1.5em; margin-bottom: 25px;">
-            Urban Reclamation: The 15-Year Horizon
-        </h2>
-        
-        <p style="color: #e0e0e0; line-height: 1.8; font-size: 1.05em; margin-bottom: 30px;">
-            The 2026 metropolitan waste crisis has exposed the failure of traditional "capping" architectures. With major operators facing million-dollar restorative justice penalties for odour breaches and decades of environmental liability, the status quo is a multi-generational drain on capital. 
-        </p>
-
-        <div style="border-left: 4px solid #d4af37; padding-left: 25px; margin: 40px 0; background: rgba(212, 175, 55, 0.03); padding-top: 20px; padding-bottom: 20px;">
-            <h3 style="color: #ffffff; text-transform: uppercase; margin-bottom: 15px; font-size: 1.2em;">
-                Project Genesis: 15-Year Refurbishment Path
-            </h3>
-            <p style="color: #b0b0b0; font-style: italic; margin-bottom: 20px;">
-                Kuiper Technologies Pty Ltd converts distressed civic liabilities into certified urban assets.
-            </p>
-            <ul style="color: #b0b0b0; list-style: square; line-height: 1.9; padding-left: 20px;">
-                <li style="margin-bottom: 10px;">
-                    <strong>Molecular Neutralization:</strong> Active elimination of methane and toxic leachate, preventing the environmental breaches and EPA restorative penalties seen across the 2026 landscape.
-                </li>
-                <li style="margin-bottom: 10px;">
-                    <strong>Accelerated Mineralization:</strong> Transforming waste mass into engineered, load-bearing ground in <strong>15 years</strong>—circumventing the current government-mandated monitoring cycles of <strong>50 to 100 years.</strong>
-                </li>
-                <li style="margin-bottom: 10px;">
-                    <strong>Sovereign Reclamation:</strong> Unlocking prime metropolitan land for high-density residential and commercial use decades ahead of industry standards.
-                </li>
-            </ul>
-        </div>
-
-        <p style="color: #d4af37; text-align: center; font-weight: bold; margin-top: 40px; border: 1px solid #d4af37; padding: 15px;">
-            "WE ARCHITECT THE GROUND FOR THE NEXT GENERATION."
-        </p>
-    </div>
-</section>
-
-<section id="vault" style="padding: 60px 20px; background: #000; border-top: 2px solid #d4af37; font-family: 'Courier New', Courier, monospace;">
-    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-        <h2 style="color: #d4af37; letter-spacing: 2px; text-transform: uppercase;">Proprietary IP Vault</h2>
-        
-        <div id="stage-1">
-            <p style="color: #b0b0b0; margin-bottom: 30px; line-height: 1.6;">
-                Access requires professional verification. <br>
-                Credentials vetted personally by the Director.
-            </p>
-            
-            <form id="vault-form" action="https://formspree.io/f/mrejwowl" method="POST">
-                <input type="text" name="name" placeholder="Full Name" required style="width: 85%; padding: 12px; margin-bottom: 15px; background: #111; color: #fff; border: 1px solid #333; font-family: inherit;">
-                <input type="text" name="linkedin" placeholder="LinkedIn Profile URL" required style="width: 85%; padding: 12px; margin-bottom: 25px; background: #111; color: #fff; border: 1px solid #333; font-family: inherit;">
-                <input type="hidden" name="_subject" value="New IP Vault Access Request">
-                <button type="submit" style="background: #0077b5; border: none; color: white; padding: 18px 30px; cursor: pointer; font-weight: bold; border-radius: 4px; width: 92%; text-transform: uppercase; letter-spacing: 1px;">
-                    Request Access via LinkedIn
-                </button>
-            </form>
-        </div>
-
-        <div id="stage-2" style="display: none; border: 1px dashed #330000; padding: 40px;">
-            <p style="color: #d4af37; font-weight: bold;">[ IDENTITY HANDSHAKE COMPLETE ]</p>
-            <p style="color: #fff; margin-top: 15px;">The Director has been notified via the Command Console.</p>
-            <p style="color: #666; font-size: 0.9em; margin-top: 10px;">A secure NDA link will be sent to your verified professional email upon approval.</p>
-        </div>
-    </div>
-</section>
-
-<section id="reclamation-duplicate" style="padding: 60px 20px; background: #0a0a0a; border-top: 2px solid #330000; font-family: 'Courier New', Courier, monospace;">
-    <div style="max-width: 800px; margin: 0 auto;">
-        <h2 style="color: #d4af37; letter-spacing: 3px; text-transform: uppercase; font-size: 1.5em; margin-bottom: 25px;">
-            Urban Reclamation: The 15-Year Horizon
-        </h2>
-        <p style="color: #e0e0e0; line-height: 1.8; font-size: 1.05em; margin-bottom: 30px;">
-            The 2026 metropolitan waste crisis has exposed the failure of traditional architectures. Kuiper Technologies provides a proprietary 15-year path to convert distressed civic liabilities into certified urban assets.
-        </p>
-        <p style="color: #d4af37; text-align: center; font-weight: bold; margin-top: 40px; border: 1px solid #d4af37; padding: 15px;">
-            "WE ARCHITECT THE GROUND FOR THE NEXT GENERATION."
-        </p>
-    </div>
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
-<script>
-  var form = document.getElementById("vault-form");
-  if(form) {
-    form.onsubmit = function(event) {
-      event.preventDefault();
-      var data = new FormData(event.target);
-      fetch(event.target.action, {
-        method: form.method,
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) {
-          document.getElementById('stage-1').style.display = 'none';
-          document.getElementById('stage-2').style.display = 'block';
-        }
-      });
-    };
-  }
-</script>
-
+    <footer>
+        <p>© 2026 Kuiper Technologies Pty Ltd | ACN: 69 54 733 24</p>
+        <p><a href="mailto:bartm@kuipertechnologies.com">bartm@kuipertechnologies.com</a> | <a href="/connect/privacy/">coNNect Privacy Policy</a></p>
+    </footer>
 </body>
 </html>
