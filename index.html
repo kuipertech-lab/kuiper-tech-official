@@ -225,6 +225,10 @@
             color: var(--muted);
         }
 
+        .app-feature + .app-feature {
+            margin-top: 24px;
+        }
+
         footer {
             width: min(1120px, calc(100% - 32px));
             margin: 0 auto;
@@ -314,13 +318,25 @@
 
         <section id="apps-created">
             <p class="eyebrow">Apps Created</p>
-            <h2>coNNect</h2>
+            <h2>Products We Have Built</h2>
             <article class="app-feature">
                 <img src="/assets/connect-logo.png" alt="coNNect app logo">
                 <div>
+                    <h3>coNNect</h3>
                     <p>coNNect is a privacy-conscious social discovery and messaging app built around user controls, secure local storage, moderation workflows, account deletion support, and location safety settings.</p>
                     <p>It demonstrates Kuiper Technologies' ability to take an app from concept into a review-ready source package with mobile UI, secure service boundaries, policy evidence, and commercial deployment preparation.</p>
                     <a class="button" href="/apps/connect/">View coNNect App Page</a>
+                </div>
+            </article>
+            <article class="app-feature">
+                <img src="/assets/kuiperchain-logo.png" alt="kuiperChain logo">
+                <div>
+                    <h3>kuiperChain</h3>
+                    <p>kuiperChain is an institutional-grade, zero-trust ledger infrastructure engineered to serve as the absolute security foundation for core infrastructure across any corporate sector, allowing enterprises to seamlessly protect their proprietary operating systems and proprietary platforms.</p>
+                    <p>This multi-layered architecture bridges a high-performance Layer 2 scaling engine, which slices data payloads into rigid 64KB packets to completely neutralize injection vulnerabilities, with a battle-hardened Layer 1 base ledger fortified by ChaCha20-Poly1305 transport encryption and Byzantine Fault Tolerant consensus.</p>
+                    <p>At the user edge (Layer 5), the system utilizes device-anchored cryptographic wallet signatures to guarantee that only verified personnel can authorize critical corporate commands and data transitions.</p>
+                    <p>Designed for ultimate structural flexibility, kuiperChain operates as a pristine, air-gapped offline testing sandbox equipped with automated filesystem sentinels and guarded rollback tripwires, before seamlessly scaling online via secure API bridges and cloud-accelerated Zero-Knowledge validity proofs.</p>
+                    <p>The result is a sovereign, completely isolated network environment that delivers instant mathematical finality, keeping a company's vital data and automation ecosystems entirely impenetrable to external network threats.</p>
                 </div>
             </article>
         </section>
