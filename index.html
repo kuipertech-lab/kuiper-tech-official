@@ -102,6 +102,10 @@
             color: var(--navy);
         }
 
+        button.button {
+            cursor: pointer;
+        }
+
         main {
             width: min(1120px, calc(100% - 32px));
             margin: 0 auto;
@@ -229,6 +233,47 @@
             margin-top: 24px;
         }
 
+        .product-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 4px;
+        }
+
+        .contact-dialog {
+            width: min(520px, calc(100% - 32px));
+            border: 1px solid var(--line);
+            background: var(--paper);
+            color: var(--navy);
+            padding: 0;
+        }
+
+        .contact-dialog::backdrop {
+            background: rgba(16, 36, 63, 0.42);
+        }
+
+        .contact-panel {
+            padding: 28px;
+        }
+
+        .contact-panel h2 {
+            font-size: 1.7rem;
+        }
+
+        .contact-panel p {
+            color: var(--muted);
+        }
+
+        .contact-panel code {
+            display: block;
+            padding: 12px;
+            background: rgba(182, 138, 85, 0.12);
+            border: 1px solid var(--line);
+            color: var(--navy);
+            white-space: normal;
+            overflow-wrap: anywhere;
+        }
+
         footer {
             width: min(1120px, calc(100% - 32px));
             margin: 0 auto;
@@ -273,8 +318,9 @@
                 <a href="#work">Work</a>
                 <a href="#apps-created">Apps Created</a>
                 <a href="/apps/connect/">coNNect</a>
-                <a href="/connect/privacy/">Privacy</a>
-                <a href="mailto:bartm@kuipertechnologies.com">Contact</a>
+                <a href="/apps/kuiperchain/">kuiperChain</a>
+                <a href="/legal/">Legal</a>
+                <a href="#contact" data-contact-dialog>Contact</a>
             </div>
         </nav>
     </header>
@@ -286,8 +332,8 @@
                 <h1>Kuiper Technologies Pty Ltd</h1>
                 <p class="lead">We design and build high-integrity software systems, mobile applications, secure APIs, and applied technology ventures for commercial, industrial, and consumer markets.</p>
                 <div class="hero-actions">
-                    <a class="button" href="/apps/connect/">View Apps Created</a>
-                    <a class="button secondary" href="mailto:bartm@kuipertechnologies.com?subject=Project%20Inquiry">Contact Director</a>
+                    <a class="button" href="#apps-created">View Apps Created</a>
+                    <button class="button secondary" type="button" data-contact-dialog data-subject="Project Inquiry">Contact Director</button>
                 </div>
             </div>
             <aside class="hero-panel">
@@ -325,7 +371,10 @@
                     <h3>coNNect</h3>
                     <p>coNNect is a privacy-conscious social discovery and messaging app built around user controls, secure local storage, moderation workflows, account deletion support, and location safety settings.</p>
                     <p>It demonstrates Kuiper Technologies' ability to take an app from concept into a review-ready source package with mobile UI, secure service boundaries, policy evidence, and commercial deployment preparation.</p>
-                    <a class="button" href="/apps/connect/">View coNNect App Page</a>
+                    <div class="product-actions">
+                        <a class="button" href="/apps/connect/">View coNNect App Page</a>
+                        <a class="button secondary" href="/connect/privacy/">View Privacy Policy</a>
+                    </div>
                 </div>
             </article>
             <article class="app-feature">
@@ -337,6 +386,10 @@
                     <p>At the user edge (Layer 5), the system utilizes device-anchored cryptographic wallet signatures to guarantee that only verified personnel can authorize critical corporate commands and data transitions.</p>
                     <p>Designed for ultimate structural flexibility, kuiperChain operates as a pristine, air-gapped offline testing sandbox equipped with automated filesystem sentinels and guarded rollback tripwires, before seamlessly scaling online via secure API bridges and cloud-accelerated Zero-Knowledge validity proofs.</p>
                     <p>The result is a sovereign, completely isolated network environment that delivers instant mathematical finality, keeping a company's vital data and automation ecosystems entirely impenetrable to external network threats.</p>
+                    <div class="product-actions">
+                        <a class="button" href="/apps/kuiperchain/">View kuiperChain App Page</a>
+                        <a class="button secondary" href="/kuiperchain/privacy/">View Privacy Policy</a>
+                    </div>
                 </div>
             </article>
         </section>
@@ -384,7 +437,38 @@
 
     <footer>
         <p>© 2026 Kuiper Technologies Pty Ltd | ACN: 69 54 733 24</p>
-        <p><a href="mailto:bartm@kuipertechnologies.com">bartm@kuipertechnologies.com</a> | <a href="/connect/privacy/">coNNect Privacy Policy</a></p>
+        <p><a href="#contact" data-contact-dialog>bartm@kuipertechnologies.com</a> | <a href="/connect/privacy/">coNNect Privacy Policy</a> | <a href="/kuiperchain/privacy/">kuiperChain Privacy Policy</a> | <a href="/legal/licensing/">Licensing Paper</a> | <a href="/legal/copyright/">Copyright Notice</a></p>
     </footer>
+
+    <dialog class="contact-dialog" id="contact">
+        <div class="contact-panel">
+            <p class="eyebrow">Contact</p>
+            <h2>Send Kuiper Technologies an email</h2>
+            <p>This contact panel stays on the website. Use the email link below when you are ready to open your mail app.</p>
+            <code>bartm@kuipertechnologies.com</code>
+            <div class="product-actions">
+                <a class="button" id="contactMailLink" href="mailto:bartm@kuipertechnologies.com?subject=Project%20Inquiry">Open Email Draft</a>
+                <button class="button secondary" type="button" data-contact-close>Close</button>
+            </div>
+        </div>
+    </dialog>
+
+    <script>
+        const contactDialog = document.getElementById("contact");
+        const contactMailLink = document.getElementById("contactMailLink");
+
+        document.querySelectorAll("[data-contact-dialog]").forEach((trigger) => {
+            trigger.addEventListener("click", (event) => {
+                event.preventDefault();
+                const subject = trigger.dataset.subject || "Kuiper Technologies Inquiry";
+                contactMailLink.href = `mailto:bartm@kuipertechnologies.com?subject=${encodeURIComponent(subject)}`;
+                contactDialog.showModal();
+            });
+        });
+
+        document.querySelector("[data-contact-close]").addEventListener("click", () => {
+            contactDialog.close();
+        });
+    </script>
 </body>
 </html>

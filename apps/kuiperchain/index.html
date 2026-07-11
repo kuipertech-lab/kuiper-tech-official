@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>coNNect App | Kuiper Technologies</title>
-    <meta name="description" content="coNNect is a privacy-conscious social discovery and messaging app by Kuiper Technologies Pty Ltd.">
+    <title>kuiperChain App | Kuiper Technologies</title>
+    <meta name="description" content="kuiperChain is zero-trust ledger infrastructure by Kuiper Technologies Pty Ltd.">
     <style>
         :root {
             --cream: #f4efe4;
@@ -149,32 +149,6 @@
             cursor: pointer;
         }
 
-        .contact-dialog {
-            width: min(520px, calc(100% - 32px));
-            border: 1px solid var(--line);
-            background: var(--paper);
-            color: var(--navy);
-            padding: 0;
-        }
-
-        .contact-dialog::backdrop {
-            background: rgba(16, 36, 63, 0.42);
-        }
-
-        .contact-panel {
-            padding: 28px;
-        }
-
-        .contact-panel code {
-            display: block;
-            padding: 12px;
-            background: rgba(182, 138, 85, 0.12);
-            border: 1px solid var(--line);
-            color: var(--navy);
-            white-space: normal;
-            overflow-wrap: anywhere;
-        }
-
         section {
             padding: 52px 0;
             border-top: 1px solid var(--line);
@@ -219,6 +193,32 @@
             color: var(--brown);
         }
 
+        .contact-dialog {
+            width: min(520px, calc(100% - 32px));
+            border: 1px solid var(--line);
+            background: var(--paper);
+            color: var(--navy);
+            padding: 0;
+        }
+
+        .contact-dialog::backdrop {
+            background: rgba(16, 36, 63, 0.42);
+        }
+
+        .contact-panel {
+            padding: 28px;
+        }
+
+        .contact-panel code {
+            display: block;
+            padding: 12px;
+            background: rgba(182, 138, 85, 0.12);
+            border: 1px solid var(--line);
+            color: var(--navy);
+            white-space: normal;
+            overflow-wrap: anywhere;
+        }
+
         @media (max-width: 760px) {
             .nav,
             .hero {
@@ -243,7 +243,8 @@
             <a class="brand" href="/">Kuiper Technologies</a>
             <div class="nav-links">
                 <a href="/#apps-created">Apps Created</a>
-                <a href="/connect/privacy/">Privacy</a>
+                <a href="/kuiperchain/privacy/">Privacy</a>
+                <a href="/legal/licensing/">Licensing</a>
                 <a href="#contact" data-contact-dialog>Contact</a>
             </div>
         </nav>
@@ -251,47 +252,51 @@
 
     <main>
         <section class="hero">
-            <img class="logo" src="/assets/connect-logo.png" alt="coNNect app logo">
+            <img class="logo" src="/assets/kuiperchain-logo.png" alt="kuiperChain logo">
             <div>
                 <p class="eyebrow">Apps Created</p>
-                <h1>coNNect</h1>
-                <p class="lead">coNNect is a privacy-conscious social discovery and messaging application built by Kuiper Technologies. It combines map-based discovery, messaging, trusted contacts, safety controls, moderation workflows, account deletion support, and review-ready privacy documentation.</p>
+                <h1>kuiperChain</h1>
+                <p class="lead">kuiperChain is institutional-grade, zero-trust ledger infrastructure engineered to serve as a security foundation for core infrastructure across corporate sectors, helping enterprises protect proprietary operating systems and platforms.</p>
                 <div class="actions">
-                    <button class="button" type="button" data-contact-dialog data-subject="coNNect App Inquiry">Discuss Licensing or Build Work</button>
-                    <a class="button secondary" href="/connect/privacy/">View Privacy Policy</a>
+                    <button class="button" type="button" data-contact-dialog data-subject="kuiperChain Licensing Inquiry">Discuss Licensing or Build Work</button>
+                    <a class="button secondary" href="/kuiperchain/privacy/">View Privacy Policy</a>
                 </div>
             </div>
         </section>
 
         <section>
             <p class="eyebrow">Product Capabilities</p>
-            <h2>A mobile app package built around real product and review requirements.</h2>
+            <h2>A ledger infrastructure package built around isolation, verification, and enterprise command integrity.</h2>
             <div class="grid">
                 <article class="item">
-                    <h3>Discovery and Messaging</h3>
-                    <p>Profile, map, venue, group, and messaging flows designed for social discovery and repeated mobile use.</p>
+                    <h3>Layered Ledger Security</h3>
+                    <p>A high-performance Layer 2 scaling engine slices data payloads into rigid 64KB packets, backed by a Layer 1 base ledger fortified by ChaCha20-Poly1305 transport encryption and Byzantine Fault Tolerant consensus.</p>
                 </article>
                 <article class="item">
-                    <h3>Privacy Controls</h3>
-                    <p>Incognito mode, map visibility, read receipts, local cache controls, account deletion, and data export support.</p>
+                    <h3>Verified Command Authority</h3>
+                    <p>Layer 5 user-edge controls use device-anchored cryptographic wallet signatures so only verified personnel can authorize critical corporate commands and data transitions.</p>
                 </article>
                 <article class="item">
-                    <h3>Safety and Moderation</h3>
-                    <p>Reporting, blocking, moderation records, messaging safety gates, and safety-oriented location controls.</p>
+                    <h3>Offline-to-Online Flexibility</h3>
+                    <p>kuiperChain supports air-gapped offline testing with filesystem sentinels and rollback tripwires, then scales online through secure API bridges and cloud-accelerated Zero-Knowledge validity proofs.</p>
                 </article>
             </div>
         </section>
 
         <section>
             <p class="eyebrow">Commercial Fit</p>
-            <h2>Built to show buyers that Kuiper Technologies can deliver serious app infrastructure.</h2>
-            <p>coNNect demonstrates native mobile UI, secure local storage, backend boundary planning, privacy policy evidence, data retention planning, moderation policy coverage, and app-store preparation. The product is suitable as a reference build for buyers seeking secure custom app development, social discovery tooling, safety-first mobile workflows, or review-ready compliance documentation.</p>
+            <h2>Built for enterprises that need sovereign, isolated infrastructure around vital data and automation systems.</h2>
+            <p>kuiperChain is designed as a licensable security foundation for proprietary platforms, corporate operating systems, critical automation workflows, tamper-resistant audit trails, and isolated high-integrity data environments. Commercial licensing, integration, and deployment terms are documented in the public licensing paper.</p>
+            <div class="actions">
+                <a class="button" href="/legal/licensing/">View Licensing Paper</a>
+                <a class="button secondary" href="/legal/">View Legal Notices</a>
+            </div>
         </section>
     </main>
 
     <footer>
         <p>© 2026 Kuiper Technologies Pty Ltd | ACN: 69 54 733 24</p>
-        <p><a href="/">Home</a> | <a href="/connect/privacy/">coNNect Privacy Policy</a> | <a href="/legal/licensing/">Licensing Paper</a> | <a href="#contact" data-contact-dialog>bartm@kuipertechnologies.com</a></p>
+        <p><a href="/">Home</a> | <a href="/kuiperchain/privacy/">kuiperChain Privacy Policy</a> | <a href="/legal/licensing/">Licensing Paper</a> | <a href="#contact" data-contact-dialog>bartm@kuipertechnologies.com</a></p>
     </footer>
 
     <dialog class="contact-dialog" id="contact">
@@ -301,7 +306,7 @@
             <p>This contact panel stays on the website. Use the email link below when you are ready to open your mail app.</p>
             <code>bartm@kuipertechnologies.com</code>
             <div class="actions">
-                <a class="button" id="contactMailLink" href="mailto:bartm@kuipertechnologies.com?subject=coNNect%20App%20Inquiry">Open Email Draft</a>
+                <a class="button" id="contactMailLink" href="mailto:bartm@kuipertechnologies.com?subject=kuiperChain%20Licensing%20Inquiry">Open Email Draft</a>
                 <button class="button secondary" type="button" data-contact-close>Close</button>
             </div>
         </div>
