@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kuiper Technologies Pty Ltd</title>
     <meta name="description" content="Kuiper Technologies Pty Ltd builds secure software systems and applied technology ventures.">
+    <link rel="icon" type="image/png" href="/assets/favicon-32.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <meta property="og:site_name" content="Kuiper Technologies">
+    <meta property="og:title" content="Kuiper Technologies Pty Ltd">
+    <meta property="og:description" content="Kuiper Technologies Pty Ltd builds secure software systems and applied technology ventures.">
+    <meta property="og:image" content="https://kuipertechnologies.com/assets/kuiper-technologies-og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://kuipertechnologies.com/assets/kuiper-technologies-og.png">
     <style>
         :root {
             --cream: #f4efe4;
@@ -53,12 +61,23 @@
         }
 
         .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             text-decoration: none;
             color: var(--navy);
             font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
             font-size: 0.95rem;
+        }
+
+        .brand-logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 10px 24px rgba(16, 36, 63, 0.18);
         }
 
         .nav-links {
@@ -313,7 +332,10 @@
 <body>
     <header class="topbar">
         <nav class="nav" aria-label="Main navigation">
-            <a class="brand" href="/">Kuiper Technologies</a>
+            <a class="brand" href="/">
+                <img class="brand-logo" src="/assets/apple-touch-icon.png" alt="Kuiper Technologies logo">
+                <span>Kuiper Technologies</span>
+            </a>
             <div class="nav-links">
                 <a href="#work">Work</a>
                 <a href="#apps-created">Apps Created</a>
