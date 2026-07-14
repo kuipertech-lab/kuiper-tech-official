@@ -322,8 +322,8 @@
             <p>Choose your email provider. Gmail and Outlook open a browser compose page with the Kuiper Technologies address already filled in.</p>
             <code>bartm@kuipertechnologies.com</code>
             <div class="actions">
-                <a class="button" id="gmailComposeLink" href="https://mail.google.com/mail/?view=cm&fs=1&to=bartm%40kuipertechnologies.com&su=coNNect%20App%20Inquiry" target="_blank" rel="noopener">Open in Gmail</a>
-                <a class="button secondary" id="outlookComposeLink" href="https://outlook.live.com/mail/0/deeplink/compose?to=bartm%40kuipertechnologies.com&subject=coNNect%20App%20Inquiry" target="_blank" rel="noopener">Open in Outlook</a>
+                <a class="button" id="gmailComposeLink" href="https://mail.google.com/mail/?view=cm&fs=1&to=bartm@kuipertechnologies.com&su=coNNect%20App%20Inquiry" target="_blank" rel="noopener">Open in Gmail</a>
+                <a class="button secondary" id="outlookComposeLink" href="https://outlook.live.com/mail/0/deeplink/compose?to=bartm@kuipertechnologies.com&subject=coNNect%20App%20Inquiry" target="_blank" rel="noopener">Open in Outlook</a>
                 <a class="button secondary" id="desktopMailLink" href="mailto:bartm@kuipertechnologies.com?subject=coNNect%20App%20Inquiry">Desktop Mail App</a>
                 <button class="button secondary" type="button" data-contact-close>Close</button>
             </div>
@@ -341,8 +341,8 @@
                 event.preventDefault();
                 const subject = trigger.dataset.subject || "Kuiper Technologies Inquiry";
                 const encodedSubject = encodeURIComponent(subject);
-                gmailComposeLink.href = `https://mail.google.com/mail/?view=cm&fs=1&to=bartm%40kuipertechnologies.com&su=${encodedSubject}`;
-                outlookComposeLink.href = `https://outlook.live.com/mail/0/deeplink/compose?to=bartm%40kuipertechnologies.com&subject=${encodedSubject}`;
+                gmailComposeLink.href = `https://mail.google.com/mail/?view=cm&fs=1&to=bartm@kuipertechnologies.com&su=${encodedSubject}`;
+                outlookComposeLink.href = `https://outlook.live.com/mail/0/deeplink/compose?to=bartm@kuipertechnologies.com&subject=${encodedSubject}`;
                 desktopMailLink.href = `mailto:bartm@kuipertechnologies.com?subject=${encodedSubject}`;
                 contactDialog.showModal();
             });
