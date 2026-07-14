@@ -354,10 +354,11 @@
     <dialog class="contact-dialog" id="contact">
         <div class="contact-panel">
             <h2>Contact Kuiper Technologies</h2>
-            <p>Use this email address for coNNect privacy, deletion, or support requests. This panel stays on the website.</p>
-            <code id="contactEmail">bartm@kuipertechnologies.com</code>
+            <p>Choose your email provider. Gmail and Outlook open a browser compose page with the Kuiper Technologies address already filled in.</p>
+            <code>bartm@kuipertechnologies.com</code>
             <div class="dialog-actions">
-                <button class="button" type="button" data-copy-email>Copy Email</button>
+                <a class="button" id="gmailComposeLink" href="https://mail.google.com/mail/?view=cm&fs=1&to=bartm%40kuipertechnologies.com&su=coNNect%20Privacy%20Support" target="_blank" rel="noopener">Open in Gmail</a>
+                <a class="button secondary" id="outlookComposeLink" href="https://outlook.live.com/mail/0/deeplink/compose?to=bartm%40kuipertechnologies.com&subject=coNNect%20Privacy%20Support" target="_blank" rel="noopener">Open in Outlook</a>
                 <button class="button secondary" type="button" data-contact-close>Close</button>
             </div>
         </div>
@@ -365,27 +366,21 @@
 
     <script>
         const contactDialog = document.getElementById("contact");
-        const contactEmail = document.getElementById("contactEmail");
-        const copyEmailButton = document.querySelector("[data-copy-email]");
+        const gmailComposeLink = document.getElementById("gmailComposeLink");
+        const outlookComposeLink = document.getElementById("outlookComposeLink");
 
         document.querySelectorAll("[data-contact-dialog]").forEach((trigger) => {
             trigger.addEventListener("click", (event) => {
                 event.preventDefault();
+                const subject = trigger.dataset.subject || "coNNect Privacy Support";
+                const encodedSubject = encodeURIComponent(subject);
+                gmailComposeLink.href = `https://mail.google.com/mail/?view=cm&fs=1&to=bartm%40kuipertechnologies.com&su=${encodedSubject}`;
+                outlookComposeLink.href = `https://outlook.live.com/mail/0/deeplink/compose?to=bartm%40kuipertechnologies.com&subject=${encodedSubject}`;
                 contactDialog.showModal();
             });
         });
 
-        copyEmailButton.addEventListener("click", async () => {
-            try {
-                await navigator.clipboard.writeText(contactEmail.textContent);
-                copyEmailButton.textContent = "Email Copied";
-            } catch {
-                copyEmailButton.textContent = "Copy Unavailable";
-            }
-        });
-
         document.querySelector("[data-contact-close]").addEventListener("click", () => {
-            copyEmailButton.textContent = "Copy Email";
             contactDialog.close();
         });
     </script>
