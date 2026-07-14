@@ -359,6 +359,7 @@
             <div class="dialog-actions">
                 <a class="button" id="gmailComposeLink" href="https://mail.google.com/mail/?view=cm&fs=1&to=bartm%40kuipertechnologies.com&su=coNNect%20Privacy%20Support" target="_blank" rel="noopener">Open in Gmail</a>
                 <a class="button secondary" id="outlookComposeLink" href="https://outlook.live.com/mail/0/deeplink/compose?to=bartm%40kuipertechnologies.com&subject=coNNect%20Privacy%20Support" target="_blank" rel="noopener">Open in Outlook</a>
+                <a class="button secondary" id="desktopMailLink" href="mailto:bartm@kuipertechnologies.com?subject=coNNect%20Privacy%20Support">Desktop Mail App</a>
                 <button class="button secondary" type="button" data-contact-close>Close</button>
             </div>
         </div>
@@ -368,6 +369,7 @@
         const contactDialog = document.getElementById("contact");
         const gmailComposeLink = document.getElementById("gmailComposeLink");
         const outlookComposeLink = document.getElementById("outlookComposeLink");
+        const desktopMailLink = document.getElementById("desktopMailLink");
 
         document.querySelectorAll("[data-contact-dialog]").forEach((trigger) => {
             trigger.addEventListener("click", (event) => {
@@ -376,6 +378,7 @@
                 const encodedSubject = encodeURIComponent(subject);
                 gmailComposeLink.href = `https://mail.google.com/mail/?view=cm&fs=1&to=bartm%40kuipertechnologies.com&su=${encodedSubject}`;
                 outlookComposeLink.href = `https://outlook.live.com/mail/0/deeplink/compose?to=bartm%40kuipertechnologies.com&subject=${encodedSubject}`;
+                desktopMailLink.href = `mailto:bartm@kuipertechnologies.com?subject=${encodedSubject}`;
                 contactDialog.showModal();
             });
         });
