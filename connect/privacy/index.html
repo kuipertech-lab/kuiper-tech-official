@@ -88,6 +88,19 @@
             text-transform: uppercase;
         }
 
+        .nav-links button {
+            border: 0;
+            padding: 0;
+            background: transparent;
+            color: var(--navy);
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
         main {
             width: min(920px, calc(100% - 32px));
             margin: 40px auto;
@@ -151,6 +164,72 @@
             font-size: 0.9rem;
         }
 
+        .contact-dialog {
+            width: min(520px, calc(100% - 32px));
+            border: 1px solid var(--line);
+            background: var(--paper);
+            color: var(--navy);
+            padding: 0;
+        }
+
+        .contact-dialog::backdrop {
+            background: rgba(16, 36, 63, 0.42);
+        }
+
+        .contact-panel {
+            padding: 28px;
+        }
+
+        .contact-panel h2 {
+            margin: 0 0 12px;
+            border: 0;
+            padding: 0;
+            font-size: 1.7rem;
+        }
+
+        .contact-panel p {
+            color: var(--muted);
+        }
+
+        .contact-panel code {
+            display: block;
+            padding: 12px;
+            background: rgba(182, 138, 85, 0.12);
+            border: 1px solid var(--line);
+            color: var(--navy);
+            white-space: normal;
+            overflow-wrap: anywhere;
+        }
+
+        .dialog-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0 18px;
+            background: var(--tan);
+            color: #fffaf0;
+            border: 1px solid var(--brown);
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .button.secondary {
+            background: transparent;
+            color: var(--navy);
+        }
+
         @media (max-width: 640px) {
             .nav {
                 align-items: flex-start;
@@ -175,7 +254,7 @@
             <div class="nav-links">
                 <a href="/#apps-created">Apps Created</a>
                 <a href="/apps/connect/">coNNect</a>
-                <a href="mailto:bartm@kuipertechnologies.com">Contact</a>
+                <button type="button" data-contact-dialog>Contact</button>
             </div>
         </nav>
     </header>
@@ -190,7 +269,7 @@
 
         <h2>Data Controller</h2>
         <p>Kuiper Technologies Pty Ltd is responsible for the coNNect app and related backend services.</p>
-        <p>Privacy and support contact: <a href="mailto:bartm@kuipertechnologies.com">bartm@kuipertechnologies.com</a></p>
+        <p>Privacy and support contact: <a href="#contact" data-contact-dialog>bartm@kuipertechnologies.com</a></p>
 
         <h2>Data We May Collect</h2>
         <ul>
@@ -256,7 +335,7 @@
         <p>Incognito Mode disables map visibility and read receipts locally. Backend services must also honor the user's privacy preference on discovery, presence, messaging metadata, and analytics where applicable.</p>
 
         <h2>Account Deletion</h2>
-        <p>Users who create an account can initiate account deletion in-app where account features are enabled. Users may also contact Kuiper Technologies at <a href="mailto:bartm@kuipertechnologies.com">bartm@kuipertechnologies.com</a> for privacy or deletion support. Deletion requests remove account data that Kuiper is not legally or operationally required to retain for safety, fraud prevention, dispute handling, or legal compliance.</p>
+        <p>Users who create an account can initiate account deletion in-app where account features are enabled. Users may also contact Kuiper Technologies at <a href="#contact" data-contact-dialog>bartm@kuipertechnologies.com</a> for privacy or deletion support. Deletion requests remove account data that Kuiper is not legally or operationally required to retain for safety, fraud prevention, dispute handling, or legal compliance.</p>
 
         <h2>Children</h2>
         <p>coNNect is not intended for children under the minimum age required by applicable law or app-store policy. Users who do not meet the required age should not create an account or use the service.</p>
@@ -271,5 +350,44 @@
             <p>© 2026 Kuiper Technologies Pty Ltd. <a href="/">Return to Kuiper Technologies</a>.</p>
         </div>
     </main>
+
+    <dialog class="contact-dialog" id="contact">
+        <div class="contact-panel">
+            <h2>Contact Kuiper Technologies</h2>
+            <p>Use this email address for coNNect privacy, deletion, or support requests. This panel stays on the website.</p>
+            <code id="contactEmail">bartm@kuipertechnologies.com</code>
+            <div class="dialog-actions">
+                <button class="button" type="button" data-copy-email>Copy Email</button>
+                <button class="button secondary" type="button" data-contact-close>Close</button>
+            </div>
+        </div>
+    </dialog>
+
+    <script>
+        const contactDialog = document.getElementById("contact");
+        const contactEmail = document.getElementById("contactEmail");
+        const copyEmailButton = document.querySelector("[data-copy-email]");
+
+        document.querySelectorAll("[data-contact-dialog]").forEach((trigger) => {
+            trigger.addEventListener("click", (event) => {
+                event.preventDefault();
+                contactDialog.showModal();
+            });
+        });
+
+        copyEmailButton.addEventListener("click", async () => {
+            try {
+                await navigator.clipboard.writeText(contactEmail.textContent);
+                copyEmailButton.textContent = "Email Copied";
+            } catch {
+                copyEmailButton.textContent = "Copy Unavailable";
+            }
+        });
+
+        document.querySelector("[data-contact-close]").addEventListener("click", () => {
+            copyEmailButton.textContent = "Copy Email";
+            contactDialog.close();
+        });
+    </script>
 </body>
 </html>
