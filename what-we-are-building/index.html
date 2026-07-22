@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuiper Technologies Pty Ltd</title>
-    <meta name="description" content="Kuiper Technologies Pty Ltd builds secure software systems and applied technology ventures.">
+    <title>What We Are Building | Kuiper Technologies Pty Ltd</title>
+    <meta name="description" content="A focused overview of the platforms, infrastructure, and environmental technology systems being built by Kuiper Technologies Pty Ltd.">
     <link rel="icon" type="image/png" href="/assets/favicon-32.png">
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
     <meta property="og:site_name" content="Kuiper Technologies">
-    <meta property="og:title" content="Kuiper Technologies Pty Ltd">
-    <meta property="og:description" content="Kuiper Technologies Pty Ltd builds secure software systems and applied technology ventures.">
+    <meta property="og:title" content="What We Are Building | Kuiper Technologies Pty Ltd">
+    <meta property="og:description" content="A focused overview of the platforms, infrastructure, and environmental technology systems being built by Kuiper Technologies Pty Ltd.">
     <meta property="og:image" content="https://kuipertechnologies.com/assets/kuiper-technologies-og.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://kuipertechnologies.com/assets/kuiper-technologies-og.png">
@@ -73,7 +73,8 @@
         }
 
         .brand-logo {
-            width: 56px; height: 56px;
+            width: 56px;
+            height: 56px;
             border-radius: 12px;
             object-fit: cover;
             box-shadow: 0 10px 24px rgba(16, 36, 63, 0.18);
@@ -129,13 +130,8 @@
             margin: 0 auto;
         }
 
-        .hero {
-            min-height: 72vh;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 56px;
-            align-items: center;
-            padding: 76px 0 48px;
+        .page-hero {
+            padding: 76px 0 54px;
         }
 
         .eyebrow {
@@ -149,22 +145,23 @@
         }
 
         h1 {
+            max-width: 920px;
             margin: 0;
             color: var(--navy);
-            font-size: clamp(2.5rem, 7vw, 5.2rem);
-            line-height: 0.98;
+            font-size: clamp(2.35rem, 6vw, 4.8rem);
+            line-height: 1;
             letter-spacing: 0;
         }
 
         .lead {
-            max-width: 680px;
+            max-width: 780px;
             margin: 28px 0 0;
             color: #263f5f;
-            font-size: clamp(1.08rem, 2vw, 1.35rem);
+            font-size: clamp(1.08rem, 2vw, 1.3rem);
         }
 
         .company-moral {
-            max-width: 760px;
+            max-width: 860px;
             margin: 22px 0 0;
             color: var(--blue);
             font-size: 1.02rem;
@@ -175,17 +172,6 @@
             gap: 14px;
             flex-wrap: wrap;
             margin-top: 34px;
-        }
-
-        .hero-panel {
-            border-left: 4px solid var(--tan);
-            padding-left: 26px;
-        }
-
-        .hero-panel p {
-            margin: 0 0 18px;
-            color: var(--muted);
-            font-size: 1rem;
         }
 
         section {
@@ -204,12 +190,12 @@
         h3 {
             margin: 0 0 10px;
             color: var(--blue);
-            font-size: 1.1rem;
+            font-size: 1.12rem;
             letter-spacing: 0;
         }
 
         .section-intro {
-            max-width: 760px;
+            max-width: 800px;
             margin: 0 0 34px;
             color: var(--muted);
             font-size: 1.06rem;
@@ -227,14 +213,15 @@
             padding: 24px;
         }
 
-        .item p {
+        .item p,
+        .build-feature p {
             margin: 0;
             color: var(--muted);
         }
 
-        .app-feature {
+        .build-feature {
             display: grid;
-            grid-template-columns: 150px 1fr;
+            grid-template-columns: 132px 1fr;
             gap: 28px;
             align-items: center;
             background: var(--paper);
@@ -242,37 +229,28 @@
             padding: 28px;
         }
 
-        .app-feature img {
+        .build-feature + .build-feature {
+            margin-top: 24px;
+        }
+
+        .build-feature img {
             width: 132px;
             height: 132px;
-            border-radius: 28px;
-            object-fit: cover;
+            border-radius: 24px;
+            object-fit: contain;
+            background: var(--cream);
             box-shadow: 0 18px 42px rgba(16, 36, 63, 0.18);
         }
 
-        .app-feature p {
-            margin: 0 0 18px;
-            color: var(--muted);
-        }
-
-        .app-feature + .app-feature {
-            margin-top: 24px;
+        .build-feature p + p {
+            margin-top: 14px;
         }
 
         .product-actions {
             display: flex;
             gap: 12px;
             flex-wrap: wrap;
-            margin-top: 4px;
-        }
-
-        .item-logo {
-            width: 86px;
-            height: 86px;
-            object-fit: cover;
-            border-radius: 18px;
-            margin-bottom: 16px;
-            box-shadow: 0 14px 30px rgba(16, 36, 63, 0.16);
+            margin-top: 20px;
         }
 
         .contact-dialog {
@@ -329,17 +307,8 @@
                 padding: 18px 0;
             }
 
-            .hero {
-                grid-template-columns: 1fr;
-                min-height: auto;
-                padding-top: 52px;
-            }
-
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            .app-feature {
+            .grid,
+            .build-feature {
                 grid-template-columns: 1fr;
             }
         }
@@ -353,9 +322,8 @@
                 <span>Kuiper Technologies</span>
             </a>
             <div class="nav-links">
-                <a href="#work">Work</a>
+                <a href="/">Home</a>
                 <a href="/what-we-are-building/">What We Are Building</a>
-                <a href="#apps-created">Apps Created</a>
                 <a href="/apps/connect/">coNNect</a>
                 <a href="/apps/kuiperchain/">kuiperChain</a>
                 <a href="/legal/">Legal</a>
@@ -365,82 +333,94 @@
     </header>
 
     <main>
-        <section class="hero">
-            <div>
-                <p class="eyebrow">Secure Software and Applied Technology</p>
-                <h1>Kuiper Technologies Pty Ltd</h1>
-                <p class="company-moral">Kuiper Technologies Pty Ltd (ACN 69 54 733 24) We at kuiper technologies are not just aiming to seed the world with real cutting edge tech that is being put in to the hands of everyday consumers and protective both the consumers and the corprate sector with real cyber security applications but we are litterally building a better path to create real products that will change how the world sees the way we move forward and arrive at a greener no emmision reality future.</p>
-                <p class="lead">We design and build high-integrity software systems, mobile applications, secure APIs, and applied technology ventures for commercial, industrial, and consumer markets.</p>
-                <div class="hero-actions">
-                    <a class="button" href="#apps-created">View Apps Created</a>
-                    <button class="button secondary" type="button" data-contact-dialog data-subject="Project Inquiry">Contact Director</button>
+        <section class="page-hero">
+            <p class="eyebrow">What We Are Building</p>
+            <h1>Applied technology systems for secure communities, trusted ledgers, and environmental infrastructure.</h1>
+            <p class="company-moral">Kuiper Technologies Pty Ltd (ACN 69 54 733 24) We at kuiper technologies are not just aiming to seed the world with real cutting edge tech that is being put in to the hands of everyday consumers and protective both the consumers and the corprate sector with real cyber security applications but we are litterally building a better path to create real products that will change how the world sees the way we move forward and arrive at a greener no emmision reality future.</p>
+            <p class="lead">Kuiper Technologies is building a connected portfolio of software platforms, ledger systems, and infrastructure concepts designed to move from usable products into larger commercial and industrial deployments.</p>
+            <div class="hero-actions">
+                <a class="button" href="#portfolio">View Portfolio</a>
+                <button class="button secondary" type="button" data-contact-dialog data-subject="What We Are Building Inquiry">Contact Director</button>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <p class="eyebrow">Current Development</p>
+            <h2>Products and systems under active development.</h2>
+            <p class="section-intro">The company is organized around practical product execution first: build the app, define the operating model, document the controls, then prepare the system for partnerships, licensing, or deployment.</p>
+
+            <article class="build-feature">
+                <img src="/assets/kuiper-os-logo.png" alt="Kuiper OS logo">
+                <div>
+                    <h3>Kuiper OS</h3>
+                    <p>Kuiper Technologies is pioneering a world defining proprietary unified, deterministic Operating System for Autonomous Manufacturing and Industrial Automation, turning fragmented factory floors into programmable, self-optimizing Physical APIs.</p>
+                    <p>Built on a zero-garbage-collection C++20 architecture running on Linux RT-PREEMPT kernels, our platform unifies raw physics, industrial fieldbuses, microsecond motion execution, multi-protocol translation, and cloud-native AI orchestration across five tightly integrated layers.</p>
+                    <p>Once all five layers are deployed, Kuiper OS transforms legacy and modern industrial machinery-from multi-axis CNCs and robotic arms to PLCs and sensors-into a vendor-agnostic, software-defined ecosystem.</p>
+                    <p>Backed by OpenSSL 3.0 cryptographic verification and POSIX O_SYNC journaling for hardware-to-cloud auditability, Kuiper OS enables engineers, developers, and AI systems to program, query, and automate complex physical machinery as effortlessly as calling a modern web service.</p>
+                    <div class="product-actions">
+                        <button class="button secondary" type="button" data-contact-dialog data-subject="Kuiper OS Inquiry">Contact About Kuiper OS</button>
+                    </div>
                 </div>
-            </div>
-            <aside class="hero-panel">
-                <p>Our commercial work combines product design, backend architecture, security controls, and operational documentation for review-ready deployments.</p>
-                <p>Current development includes coNNect, kuiperChain ledger infrastructure, Rig Genesis automation architecture, and Project Genesis environmental infrastructure research.</p>
-            </aside>
-        </section>
+            </article>
 
-        <section id="work">
-            <p class="eyebrow">What We Build</p>
-            <h2>Commercial systems with security and compliance built into the foundation.</h2>
-            <p class="section-intro">Kuiper Technologies creates custom applications, secure service layers, and privacy-conscious product frameworks for organizations that need practical engineering and defensible documentation.</p>
-            <div class="grid">
-                <article class="item">
-                    <h3>Mobile Applications</h3>
-                    <p>Consumer and business apps with account flows, privacy controls, messaging, safety features, and app-store readiness.</p>
-                </article>
-                <article class="item">
-                    <h3>kuiperChain Licensing</h3>
-                    <p>Proprietary blockchain ledger infrastructure available for purchase through commercial licensing, integration, and deployment agreements.</p>
-                </article>
-                <article class="item">
-                    <h3>Secure APIs</h3>
-                    <p>Backend services, integration layers, audit logging, data retention controls, and security-first operational design.</p>
-                </article>
-            </div>
-        </section>
+            <article class="build-feature">
+                <img src="/assets/rasphere-logo.png" alt="rAsphere logo">
+                <div>
+                    <h3>rAsphere</h3>
+                    <p>At Kuiper Technologies, we are shifting the energy paradigm from resource extraction to subatomic engineering. The rAsphere is a 750 mm3 modular magneto-inertial fusion reactor configured to run safely on a non-radioactive Deuterium fuel cycle.</p>
+                    <p>The long-range goal is a compact reactor platform capable of turning buildings, remote facilities, and critical infrastructure into sovereign energy islands with no grid dependency, no lithium battery reliance, and no operational emissions at the point of use.</p>
+                    <p>The rAsphere concept is built around standardized power blades, high-powered magnetic compression, direct electricity capture, and a software-defined control layer designed to coordinate reactor telemetry, thermal behavior, safety states, and clean-water infrastructure from one deterministic console.</p>
+                    <p>Our software control console is built, and the platform is being shaped for simulation, engineering validation, and future manufacturing partnerships as Kuiper Technologies works toward anchoring the macro-hydrogen transition.</p>
+                    <div class="product-actions">
+                        <button class="button secondary" type="button" data-contact-dialog data-subject="rAsphere Inquiry">Contact About rAsphere</button>
+                    </div>
+                </div>
+            </article>
 
-        <section id="apps-created">
-            <p class="eyebrow">Apps Created</p>
-            <h2>Products We Have Built</h2>
-            <article class="app-feature">
+            <article class="build-feature">
+                <img src="/assets/green-steel-os-logo.png" alt="Green Steel OS hydrogen steel furnace logo">
+                <div>
+                    <h3>Green Steel OS</h3>
+                    <p>Green Steel OS is a monolithic, Rust-based industrial operating system engineered to automate zero-emission, hydrogen-based steel plants by replacing slow, fragmented legacy SCADA systems with ultra-fast, sub-cycle execution.</p>
+                    <p>Designed specifically for Direct Reduced Iron plants and multi-megawatt Electric Arc Furnaces, Green Steel OS dynamically intercepts power streams from wind parks, utility grids, and battery storage to deliver sub-8-millisecond automated load-shedding during energy drops.</p>
+                    <p>The platform automatically synchronizes pure green hydrogen flow rates with real-time electric arc furnace fluctuations to maintain optimal thermodynamics with pure water-vapor emissions, while continuously scanning factory-wide sensors to execute instant, native hardware safety isolation without human reaction lag.</p>
+                    <p>Green Steel OS unifies power management, precise chemical balancing, and active plant safety into a single, rock-solid platform for the next generation of clean industrial steel production.</p>
+                    <div class="product-actions">
+                        <button class="button secondary" type="button" data-contact-dialog data-subject="Green Steel OS Inquiry">Contact About Green Steel OS</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="build-feature">
                 <img src="/assets/connect-logo.png" alt="coNNect app logo">
                 <div>
                     <h3>coNNect</h3>
-                    <p>coNNect is a hyper-localized, privacy-first social platform built to instantly bridge the gap between digital proximity and real-world community for international travelers, backpackers, and expats.</p>
-                    <p>Backed by the secure infrastructure of Kuiper Technologies, the app utilizes an intelligent 350-meter fuzzed mapping system to safely connect users with trusted compatriots from their specific home country who are living or traveling in the same neighborhood.</p>
-                    <p>Beyond instant social introductions, coNNect acts as a localized survival toolkit with dedicated resource corridors for verified regional housing, visa-compliant job networks, secure messaging, trusted contacts, safety controls, moderation workflows, account deletion support, encrypted local storage, and review-ready privacy documentation.</p>
-                    <p>By pairing active user streams with officially partnered Hometown Hubs, including local pubs, gyms, and cafes offering exclusive community perks, coNNect turns any unfamiliar foreign city into a welcoming hometown the exact second a user logs in.</p>
+                    <p>A privacy-first social platform for international travelers, backpackers, and expats who need safer local discovery, trusted contacts, regional housing and work corridors, and controlled proximity-based introductions.</p>
+                    <p>The product combines location-aware community tools, safety controls, moderation workflows, and review-ready privacy documentation.</p>
                     <div class="product-actions">
-                        <a class="button" href="/apps/connect/">View coNNect App Page</a>
-                        <a class="button secondary" href="/connect/privacy/">View Privacy Policy</a>
+                        <a class="button" href="/apps/connect/">View coNNect</a>
                     </div>
                 </div>
             </article>
-            <article class="app-feature">
+
+            <article class="build-feature">
                 <img src="/assets/kuiperchain-logo.png" alt="kuiperChain logo">
                 <div>
                     <h3>kuiperChain</h3>
-                    <p>kuiperChain is an institutional-grade, zero-trust ledger infrastructure engineered to serve as the absolute security foundation for core infrastructure across any corporate sector, allowing enterprises to seamlessly protect their proprietary operating systems and proprietary platforms.</p>
-                    <p>This multi-layered architecture bridges a high-performance Layer 2 scaling engine, which slices data payloads into rigid 64KB packets to completely neutralize injection vulnerabilities, with a battle-hardened Layer 1 base ledger fortified by ChaCha20-Poly1305 transport encryption and Byzantine Fault Tolerant consensus.</p>
-                    <p>At the user edge (Layer 5), the system utilizes device-anchored cryptographic wallet signatures to guarantee that only verified personnel can authorize critical corporate commands and data transitions.</p>
-                    <p>Designed for ultimate structural flexibility, kuiperChain operates as a pristine, air-gapped offline testing sandbox equipped with automated filesystem sentinels and guarded rollback tripwires, before seamlessly scaling online via secure API bridges and cloud-accelerated Zero-Knowledge validity proofs.</p>
-                    <p>The result is a sovereign, completely isolated network environment that delivers instant mathematical finality, keeping a company's vital data and automation ecosystems entirely impenetrable to external network threats.</p>
+                    <p>A proprietary ledger infrastructure project designed for high-integrity audit trails, tamper-resistant operational records, device-anchored authorization, and protected automation environments.</p>
+                    <p>The system is being prepared for commercial licensing and future integration into Kuiper-operated platforms that need defensible execution history.</p>
                     <div class="product-actions">
-                        <a class="button" href="/apps/kuiperchain/">View kuiperChain App Page</a>
-                        <a class="button secondary" href="/kuiperchain/privacy/">View Privacy Policy</a>
+                        <a class="button" href="/apps/kuiperchain/">View kuiperChain</a>
                     </div>
                 </div>
             </article>
-            <article class="app-feature">
+
+            <article class="build-feature">
                 <img src="/assets/rig-genesis-logo.png" alt="Rig Genesis logo">
                 <div>
                     <h3>Rig Genesis</h3>
-                    <p>Developed by Kuiper Technologies, Rig Genesis is a planetary-scale waste-deletion network that transforms decommissioned offshore oil platforms into autonomous ocean plastic processing hubs.</p>
-                    <p>Managed by our proprietary operating system, Rig OS, the platform utilizes advanced fluid-dynamic vacuums to trap marine debris, which is then safely and verifiably processed through proprietary polymer neutralization technology.</p>
-                    <p>By tracking every kilogram of neutralized polymer through an unhackable blockchain ledger and a purpose-built SaaS platform that calculates, monitors, and verifies corporate Plastic Offset Credit purchases, Rig Genesis turns a multi-billion dollar industrial liability into premium, auditable environmental assets, restoring marine ecosystems while pioneering the future of corporate environmental neutrality.</p>
+                    <p>A long-horizon environmental infrastructure concept focused on transforming decommissioned offshore platforms into autonomous marine plastic processing hubs.</p>
+                    <p>The operating model connects Rig OS automation, verified polymer processing, blockchain-backed records, and a purpose-built SaaS platform for calculating, monitoring, and verifying corporate Plastic Offset Credit purchases.</p>
                     <div class="product-actions">
                         <button class="button secondary" type="button" data-contact-dialog data-subject="Rig Genesis Inquiry">Contact About Rig Genesis</button>
                     </div>
@@ -449,42 +429,20 @@
         </section>
 
         <section>
-            <p class="eyebrow">Ledger Infrastructure</p>
-            <h2>Securing the next generation of autonomous operations.</h2>
-            <p class="section-intro">kuiperChain is Kuiper Technologies' proprietary blockchain ledger infrastructure. It is being prepared as a commercial technology available for purchase through licensing, while also being engineered to wrap Rig Genesis in an unbreakable cryptographic fortress.</p>
+            <p class="eyebrow">Build Priorities</p>
+            <h2>The same engineering principles run through each product line.</h2>
             <div class="grid">
                 <article class="item">
-                    <img class="item-logo" src="/assets/rig-genesis-logo.png" alt="Rig Genesis logo">
-                    <h3>Rig Genesis Protection</h3>
-                    <p>While Rig Genesis drives the core automations, workflows, and logic execution pipelines for Kuiper's polymer chain degradation technology, kuiperChain operates quietly beneath the surface.</p>
+                    <h3>Security Controls</h3>
+                    <p>Authentication, authorization, audit logging, retention design, and operational documentation are treated as product requirements from the start.</p>
                 </article>
                 <article class="item">
-                    <h3>Licensable Ledger</h3>
-                    <p>Organizations will be able to license kuiperChain for high-integrity audit trails, tamper-resistant operational records, and protected automation environments.</p>
+                    <h3>Commercial Readiness</h3>
+                    <p>Each system is shaped for real-world use, including support workflows, privacy policies, licensing pathways, and partner-facing materials.</p>
                 </article>
                 <article class="item">
-                    <h3>Execution Integrity</h3>
-                    <p>kuiperChain is designed to prevent data tampering and preserve execution integrity across critical autonomous operations.</p>
-                </article>
-            </div>
-        </section>
-
-        <section>
-            <p class="eyebrow">Project Genesis</p>
-            <h2>Applied infrastructure research for long-term environmental transformation.</h2>
-            <p class="section-intro">Alongside commercial software, Kuiper Technologies is developing Project Genesis: a long-horizon research and infrastructure concept focused on transforming distressed environmental liabilities into engineered future assets through polymer chain degradation technology coordinated by Rig Genesis.</p>
-            <div class="grid">
-                <article class="item">
-                    <h3>Methodology</h3>
-                    <p>Repurposing infrastructure and software-led logistics to support large-scale environmental transformation pathways.</p>
-                </article>
-                <article class="item">
-                    <h3>Commercial Engine</h3>
-                    <p>Custom software and secure application development provide near-term commercial sustainability while funding long-term research.</p>
-                </article>
-                <article class="item">
-                    <h3>Partner Access</h3>
-                    <p>Technical details and restricted materials are available to verified partners under appropriate access controls.</p>
+                    <h3>Defensible Records</h3>
+                    <p>Ledger-backed records and structured verification flows are used where proof, accountability, and traceability matter to the business model.</p>
                 </article>
             </div>
         </section>
