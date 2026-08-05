@@ -233,10 +233,6 @@
             margin-top: 24px;
         }
 
-        .build-feature.product-battery {
-            grid-template-columns: minmax(220px, 320px) 1fr;
-        }
-
         .build-feature img {
             width: 132px;
             height: 132px;
@@ -244,17 +240,6 @@
             object-fit: contain;
             background: var(--cream);
             box-shadow: 0 18px 42px rgba(16, 36, 63, 0.18);
-        }
-
-        .build-feature img.battery-logo {
-            width: min(320px, 100%);
-            height: auto;
-            aspect-ratio: 1350 / 620;
-            border-radius: 18px;
-        }
-
-        .product-battery h3 {
-            font-size: 1.28rem;
         }
 
         .build-feature p + p {
@@ -326,10 +311,6 @@
             .build-feature {
                 grid-template-columns: 1fr;
             }
-
-            .build-feature img.battery-logo {
-                width: min(380px, 100%);
-            }
         }
     </style>
 </head>
@@ -381,8 +362,8 @@
                 </div>
             </article>
 
-            <article class="build-feature product-battery">
-                <img class="battery-logo" src="/assets/kuiper-battery-logo.png?v=20260805" alt="Kuiper Battery logo">
+            <article class="build-feature">
+                <img src="/assets/kuiper-battery-logo.png?v=20260805" alt="Kuiper Battery logo">
                 <div>
                     <h3>Kuiper Battery</h3>
                     <p>Kuiper Technologies is pioneering The Kuiper Battery Module a containerized, hybrid energy storage platform engineered to bridge the critical gap between instantaneous high-megawatt pulse power absorption and long-duration bulk energy firming.</p>
