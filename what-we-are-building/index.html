@@ -233,6 +233,10 @@
             margin-top: 24px;
         }
 
+        .build-feature.product-battery {
+            grid-template-columns: minmax(220px, 320px) 1fr;
+        }
+
         .build-feature img {
             width: 132px;
             height: 132px;
@@ -240,6 +244,17 @@
             object-fit: contain;
             background: var(--cream);
             box-shadow: 0 18px 42px rgba(16, 36, 63, 0.18);
+        }
+
+        .build-feature img.battery-logo {
+            width: min(320px, 100%);
+            height: auto;
+            aspect-ratio: 1350 / 620;
+            border-radius: 18px;
+        }
+
+        .product-battery h3 {
+            font-size: 1.28rem;
         }
 
         .build-feature p + p {
@@ -311,6 +326,10 @@
             .build-feature {
                 grid-template-columns: 1fr;
             }
+
+            .build-feature img.battery-logo {
+                width: min(380px, 100%);
+            }
         }
     </style>
 </head>
@@ -362,8 +381,8 @@
                 </div>
             </article>
 
-            <article class="build-feature">
-                <img src="/assets/kuiper-battery-logo.png" alt="Kuiper Battery logo">
+            <article class="build-feature product-battery">
+                <img class="battery-logo" src="/assets/kuiper-battery-logo.png?v=20260805" alt="Kuiper Battery logo">
                 <div>
                     <h3>Kuiper Battery</h3>
                     <p>Kuiper Technologies is pioneering The Kuiper Battery Module a containerized, hybrid energy storage platform engineered to bridge the critical gap between instantaneous high-megawatt pulse power absorption and long-duration bulk energy firming.</p>
@@ -371,7 +390,10 @@
                     <p>Designed to operate as the exclusive power-conditioning shock absorber for the rAsphere fusion platform, the module captures intense plasma compression surges and safely smooths them into clean, grid-compliant energy without exposing municipal utility infrastructure to electrical stress.</p>
                     <p>The Kuiper Battery can be licensed to be used in any operation that uses lithium based batteries, from solar panel energy capture to hotels using solar or green energies and want to keep them on site and not re grid with out the dangers of thermal runaway.</p>
                     <div class="product-actions">
-                        <button class="button secondary" type="button" data-contact-dialog data-subject="Kuiper OS Inquiry">Contact About Kuiper OS</button>
+                        <button class="button secondary" type="button" data-contact-dialog data-subject="Kuiper Battery Inquiry">Contact About Kuiper Battery</button>
+                        <a class="button secondary" href="/what-we-are-building/kuiper-battery/privacy/">Privacy</a>
+                        <a class="button secondary" href="/what-we-are-building/kuiper-battery/legal/">Legal</a>
+                        <a class="button secondary" href="/what-we-are-building/kuiper-battery/copyright/">Copyright</a>
                     </div>
                 </div>
             </article>
@@ -428,7 +450,7 @@
 
     <footer>
         <p>© 2026 Kuiper Technologies Pty Ltd | ABN: 50 695 473 324</p>
-        <p><a href="#contact" data-contact-dialog>bartm@kuipertechnologies.com</a> | <a href="/what-we-have-built/">What We Have Built</a> | <a href="/connect/privacy/">coNNect Privacy Policy</a> | <a href="/kuiperchain/privacy/">kuiperChain Privacy Policy</a> | <a href="/what-we-are-building/privacy/">What We Are Building Privacy Notice</a> | <a href="/legal/licensing/">Licensing Paper</a> | <a href="/legal/copyright/">Copyright Notice</a></p>
+        <p><a href="#contact" data-contact-dialog>bartm@kuipertechnologies.com</a> | <a href="/what-we-have-built/">What We Have Built</a> | <a href="/connect/privacy/">coNNect Privacy Policy</a> | <a href="/kuiperchain/privacy/">kuiperChain Privacy Policy</a> | <a href="/what-we-are-building/privacy/">What We Are Building Privacy Notice</a> | <a href="/what-we-are-building/kuiper-battery/privacy/">Kuiper Battery Privacy Notice</a> | <a href="/what-we-are-building/kuiper-battery/legal/">Kuiper Battery Legal Notice</a> | <a href="/what-we-are-building/kuiper-battery/copyright/">Kuiper Battery Copyright Notice</a> | <a href="/legal/licensing/">Licensing Paper</a> | <a href="/legal/copyright/">Copyright Notice</a></p>
     </footer>
 
     <dialog class="contact-dialog" id="contact">
