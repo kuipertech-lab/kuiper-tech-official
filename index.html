@@ -120,6 +120,28 @@
             color: var(--navy);
         }
 
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0 18px;
+            border: 1px solid var(--brown);
+            color: #fffaf0;
+            background: var(--tan);
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--navy);
+        }
+
         button.button {
             cursor: pointer;
         }
@@ -170,6 +192,33 @@
             font-size: 1.02rem;
         }
 
+        .hero-container {
+            max-width: 760px;
+            margin-top: 28px;
+        }
+
+        .hero-title {
+            margin: 0;
+            color: var(--blue);
+            font-size: clamp(1.65rem, 4vw, 2.85rem);
+            line-height: 1.1;
+            letter-spacing: 0;
+        }
+
+        .hero-subtitle {
+            max-width: 720px;
+            margin: 18px 0 0;
+            color: #263f5f;
+            font-size: clamp(1.02rem, 2vw, 1.18rem);
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 26px;
+        }
+
         .hero-actions {
             display: flex;
             gap: 14px;
@@ -208,6 +257,28 @@
             letter-spacing: 0;
         }
 
+        .container {
+            max-width: 920px;
+        }
+
+        .section-tag {
+            display: block;
+            margin: 0 0 14px;
+            color: var(--brown);
+            font-family: Arial, sans-serif;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .lead-text {
+            max-width: 780px;
+            margin: 0 0 18px;
+            color: #263f5f;
+            font-size: clamp(1.08rem, 2vw, 1.28rem);
+        }
+
         .section-intro {
             max-width: 760px;
             margin: 0 0 34px;
@@ -221,15 +292,68 @@
             gap: 18px;
         }
 
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
         .item {
             background: var(--paper);
             border: 1px solid var(--line);
             padding: 24px;
         }
 
-        .item p {
+        .item p,
+        .card p,
+        .mission p,
+        .technology-engine p,
+        .cta p {
             margin: 0;
             color: var(--muted);
+        }
+
+        .mission p + p,
+        .technology-engine p + p,
+        .cta p + p {
+            margin-top: 18px;
+        }
+
+        .card {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            padding: 24px;
+        }
+
+        .card-badge {
+            display: inline-flex;
+            margin-bottom: 16px;
+            color: var(--brown);
+            font-family: Arial, sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .card-link {
+            display: inline-flex;
+            margin-top: 18px;
+            color: var(--brown);
+            font-family: Arial, sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .cta {
+            background: rgba(255, 250, 240, 0.62);
+        }
+
+        .cta .btn {
+            margin-top: 24px;
         }
 
         .app-feature {
@@ -335,7 +459,8 @@
                 padding-top: 52px;
             }
 
-            .grid {
+            .grid,
+            .card-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -369,7 +494,17 @@
             <div>
                 <p class="eyebrow">Secure Software and Applied Technology</p>
                 <h1>Kuiper Technologies Pty Ltd</h1>
-                <p class="company-moral">Kuiper Technologies Pty Ltd (ACN 69 54 733 24) We at kuiper technologies are not just aiming to seed the world with real cutting edge tech that is being put in to the hands of everyday consumers and protective both the consumers and the corprate sector with real cyber security applications but we are litterally building a better path to create real products that will change how the world sees the way we move forward and arrive at a greener no emmision reality future.</p>
+                <div class="hero-container">
+                    <h2 class="hero-title">Pioneering Real Zero-Emission Production</h2>
+                    <p class="hero-subtitle">
+                        Breaking the petroleum chokehold on global manufacturing. From everyday household essentials to hard-to-abate industrial sectors, Kuiper Technologies builds technology designed to heal the planet.
+                    </p>
+                    <div class="hero-cta-group">
+                        <a href="#pipeline" class="btn btn-primary">Explore Our Products</a>
+                        <a href="#contact" class="btn btn-secondary" data-contact-dialog data-subject="Zero-Emission Partnership Inquiry">Get in Touch</a>
+                    </div>
+                </div>
+                <p class="company-moral">Kuiper Technologies Pty Ltd. We at kuiper technologies are not just aiming to seed the world with real cutting edge tech that is being put in to the hands of everyday consumers and protective both the consumers and the corprate sector with real cyber security applications but we are litterally building a better path to create real products that will change how the world sees the way we move forward and arrive at a greener no emmision reality future.</p>
                 <p class="lead">We design and build high-integrity software systems, mobile applications, secure APIs, and applied technology ventures for commercial, industrial, and consumer markets.</p>
                 <div class="hero-actions">
                     <a class="button" href="/what-we-have-built/">View What We Have Built</a>
@@ -380,6 +515,70 @@
                 <p>Our commercial work combines product design, backend architecture, security controls, and operational documentation for review-ready deployments.</p>
                 <p>Current development includes coNNect, kuiperChain ledger infrastructure, Rig Genesis automation architecture, and Project Genesis environmental infrastructure research.</p>
             </aside>
+        </section>
+
+        <section class="mission" id="mission">
+            <div class="container">
+                <span class="section-tag">The Shift</span>
+                <h2>Ending Seven Decades of Petroleum Reliance</h2>
+                <p class="lead-text">
+                    The petroleum sector holds an overwhelming grip on daily life, from our soap, toothpaste, and shampoo to milk bottles, juice containers, and industrial adhesives.
+                </p>
+                <p>
+                    At Kuiper Technologies, we are shifting away from toxic fossil-fuel dependence. We engineer scalable, high-performance alternatives for the hardest industry sectors that must transform if we are to achieve true zero-emission manufacturing.
+                </p>
+            </div>
+        </section>
+
+        <section class="technology-engine" id="technology">
+            <div class="container">
+                <span class="section-tag">Our Model</span>
+                <h2>How We Power Innovation</h2>
+                <p>
+                    We build accessible everyday consumer technology through our D2C applications, alongside world-leading corporate APIs, SDKs, and a proprietary 3-layered blockchain ledger. Revenue generated from our active digital platforms directly finances the R&amp;D and scaling of our zero-emission hardware and material breakthroughs.
+                </p>
+            </div>
+        </section>
+
+        <section class="pipeline" id="pipeline">
+            <div class="container">
+                <span class="section-tag">R&amp;D &amp; Prototype Pipeline</span>
+                <h2>Solutions in Development</h2>
+                <p class="section-intro">Explore how our upcoming releases are reimagining core industrial sectors.</p>
+
+                <div class="card-grid">
+                    <article class="card">
+                        <div class="card-badge">Materials</div>
+                        <h3>Recyclable Industrial Adhesives</h3>
+                        <p>Two 100% completely recyclable, high-strength glues engineered to eliminate toxic, petroleum-based hardeners from global manufacturing.</p>
+                        <a href="/products/industrial-adhesives" class="card-link">View Product Specs &rarr;</a>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-badge">Packaging</div>
+                        <h3>Fossil-Free Beverage Containers</h3>
+                        <p>A scalable alternative designed to replace traditional plastic milk and juice bottles across major supply chains.</p>
+                        <a href="/products/sustainable-packaging" class="card-link">Explore Bottle Tech &rarr;</a>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-badge">CleanTech / SaaS</div>
+                        <h3>Ocean Nanoplastic Remediation</h3>
+                        <p>Proprietary filtration and polymer chain degradation tech that removes ocean microplastics, paired with a SaaS credit engine for corporate sustainability offsets.</p>
+                        <a href="/products/ocean-remediation" class="card-link">Learn About Credits &rarr;</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta" id="partner-contact">
+            <div class="container">
+                <h2>Join the Zero-Emission Revolution</h2>
+                <p>
+                    Kuiper Technologies is new, bold, and focused on replacing seven decades of toxic industrial outputs. Get in touch to partner, invest, or integrate our solutions into your supply chain.
+                </p>
+                <a href="#contact" class="btn btn-primary" data-contact-dialog data-subject="Zero-Emission Partnership Inquiry">Partner With Us</a>
+            </div>
         </section>
 
         <section id="work">
