@@ -155,7 +155,7 @@
         .hero {
             min-height: 72vh;
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
+            grid-template-columns: 1fr;
             gap: 56px;
             align-items: center;
             padding: 76px 0 48px;
@@ -236,6 +236,27 @@
             margin: 0 0 18px;
             color: var(--muted);
             font-size: 1rem;
+        }
+
+        .work-summary {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-left: 4px solid var(--tan);
+            padding: 26px;
+        }
+
+        .work-summary p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .work-summary p + p {
+            margin-top: 18px;
+        }
+
+        .work-summary + #apps-created {
+            padding-top: 34px;
         }
 
         section {
@@ -351,6 +372,13 @@
 
         .cta {
             background: rgba(255, 250, 240, 0.62);
+        }
+
+        .cta .container {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-left: 4px solid var(--tan);
+            padding: 28px;
         }
 
         .cta .btn {
@@ -512,10 +540,6 @@
                     <button class="button secondary" type="button" data-contact-dialog data-subject="Project Inquiry">Contact Director</button>
                 </div>
             </div>
-            <aside class="hero-panel">
-                <p>Our commercial work combines product design, backend architecture, security controls, and operational documentation for review-ready deployments.</p>
-                <p>Current development includes coNNect, kuiperChain ledger infrastructure, Rig Genesis automation architecture, and Project Genesis environmental infrastructure research.</p>
-            </aside>
         </section>
 
         <section class="mission" id="mission">
@@ -600,6 +624,11 @@
                     <p>Backend services, integration layers, audit logging, data retention controls, and security-first operational design.</p>
                 </article>
             </div>
+        </section>
+
+        <section class="work-summary" aria-label="Commercial work summary">
+            <p>Our commercial work combines product design, backend architecture, security controls, and operational documentation for review-ready deployments.</p>
+            <p>Current development includes coNNect, kuiperChain ledger infrastructure, Rig Genesis automation architecture, and Project Genesis environmental infrastructure research.</p>
         </section>
 
         <section id="apps-created">
